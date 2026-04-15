@@ -21,6 +21,27 @@ If a repository `SPEC.md` is partial, use the values it defines and fall back to
 2. `spec-crlp` uses that spec plus implementation feedback to run a correction loop.
 3. `spec-index` stores and retrieves durable knowledge that helps future planning and correction work.
 
+## Default Context Retrieval Behavior
+
+- Before planning non-trivial work, `spec-plan` should retrieve relevant memory from `spec-index`.
+- Before debugging or correction work, `spec-crlp` should retrieve relevant memory from `spec-index`.
+- Retrieval should be bounded and purposeful, not an open-ended research phase.
+- Search first for decisions, constraints, setup rules, pitfalls, validation rules, root causes, and fix patterns.
+- Build search terms from the user request, component names, file paths, tools, frameworks, symptoms, and error text.
+- If relevant memory is found, incorporate it into the plan or correction summary with a short explanation of why it matters.
+- If no relevant memory is found, say that no matching memory was found and continue with the normal workflow.
+- Skip retrieval for tiny, self-contained tasks where there is no meaningful repository context to reuse.
+
+## Default Task Spec Behavior
+
+- Default task spec root: `docs/specs/`
+- Default task spec file name: `<slug>.md`
+- Persist a task spec when the work is multi-step, risky, likely to span turns, or needs future correction against stable acceptance criteria.
+- Keep the plan in the conversation and move directly into task execution when the task is small, well-bounded, and the user clearly wants momentum.
+- Use Markdown for the overall task spec.
+- Use Gherkin only for behavior-oriented acceptance criteria or regression scenarios where `Given / When / Then` improves clarity.
+- Do not force Gherkin onto setup notes, implementation steps, decisions, or generic planning prose.
+
 ## Default Validation Behavior
 
 - Prefer validation commands declared in a target repository root `SPEC.md`.
@@ -33,6 +54,8 @@ If a repository `SPEC.md` is partial, use the values it defines and fall back to
 
 - Default knowledge base root: `docs/knowledge-base/`
 - Default knowledge base index: `docs/knowledge-base/index.md`
+- Default entry format: Markdown with YAML frontmatter, one primary category, and retrieval-oriented trigger tags.
+- Default indexing helper: use the `spec-index` bundled `scripts/index.py` when available.
 - Save durable knowledge as concise Markdown entries linked from the index.
 - Capture only validated, reusable knowledge.
 - Preferred capture categories: decisions, constraints, setup rules, root causes, fixes, patterns, and pitfalls.

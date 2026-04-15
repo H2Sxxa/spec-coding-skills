@@ -31,6 +31,7 @@ When no repository root `SPEC.md` is available, use these defaults:
 - validation behavior: prefer discoverable repository tooling; if no validation commands are discoverable, say validation is not configured yet
 - setup document: `SETUP.md`
 - knowledge-base location: `docs/knowledge-base/`
+- context retrieval: query `spec-index` for similar symptoms, root causes, fix patterns, setup gotchas, and validation rules before correction work
 
 ## Core responsibilities
 
@@ -39,6 +40,25 @@ When no repository root `SPEC.md` is available, use these defaults:
 - Trace failures to a root cause instead of patching symptoms.
 - Apply focused fixes and re-run the most relevant checks.
 - Surface reusable lessons that should be captured by `spec-index`.
+
+## Context retrieval before correction
+
+Before starting a correction loop, retrieve relevant memory through `spec-index`.
+
+Look for:
+
+- similar symptoms or error messages
+- prior root causes
+- reusable fix patterns
+- setup or environment gotchas
+- validation rules and known flaky checks
+- component-specific pitfalls
+
+Build retrieval queries from failing test names, CI output, stack traces, log messages, file paths, tools, frameworks, components, and observed symptoms.
+
+Use the retrieved memory as diagnostic context, not as proof. Confirm the current root cause with local evidence before changing code.
+
+If no relevant memory is found, say so briefly and continue. Do not block correction on an empty knowledge base.
 
 ## When this skill is not the right fit
 
@@ -52,6 +72,7 @@ Gather as many of these as the task provides:
 
 - The current spec, acceptance criteria, or expected behavior.
 - The repository root `SPEC.md` when present.
+- Relevant memory retrieved through `spec-index`.
 - Failing tests, CI output, linter diagnostics, logs, stack traces, or screenshots.
 - The current code and the files most likely involved in the failure.
 - Review feedback that points to a regression, missing case, or poor implementation choice.
@@ -61,13 +82,15 @@ If the expected behavior is missing, derive the minimum workable acceptance crit
 ## Correction loop
 
 1. Restate the target behavior in observable terms.
-2. Reproduce or localize the failure using the strongest available signal.
-3. Classify the signal: spec mismatch, lint issue, test failure, runtime bug, environment issue, or review concern.
-4. Inspect the code path that explains the failure.
-5. Identify the root cause and explain why it produces the observed behavior.
-6. Implement the smallest coherent change that fixes the root cause.
-7. Re-run the most relevant validation steps defined by the repository root `SPEC.md` when present, otherwise use the built-in default behavior and discoverable repo tooling.
-8. Summarize the outcome, residual risk, and any knowledge worth persisting.
+2. Read the repository root `SPEC.md` when present and apply the built-in defaults for anything it does not define.
+3. Retrieve relevant memory through `spec-index`.
+4. Reproduce or localize the failure using the strongest available signal.
+5. Classify the signal: spec mismatch, lint issue, test failure, runtime bug, environment issue, or review concern.
+6. Inspect the code path that explains the failure.
+7. Identify the root cause and explain why it produces the observed behavior, using memory only when local evidence supports it.
+8. Implement the smallest coherent change that fixes the root cause.
+9. Re-run the most relevant validation steps defined by the repository root `SPEC.md` when present, otherwise use the built-in default behavior and discoverable repo tooling.
+10. Summarize the outcome, residual risk, relevant memory used, and any new knowledge worth persisting.
 
 ## Preferred output structure
 
@@ -77,6 +100,7 @@ Prefer this structure unless the user asks for something lighter:
 # Correction Summary
 ## Expected Behavior
 ## Observed Behavior
+## Relevant Memory
 ## Root Cause
 ## Fix
 ## Validation
@@ -87,6 +111,7 @@ Prefer this structure unless the user asks for something lighter:
 ## Good habits
 
 - Use the spec as the source of truth whenever possible.
+- Retrieve relevant memory before debugging so prior root causes and setup gotchas are not missed.
 - Prefer narrow, testable fixes over broad rewrites.
 - Keep cause and effect explicit.
 - Validate with the checks most likely to catch the same issue again.

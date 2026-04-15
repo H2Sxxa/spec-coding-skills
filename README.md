@@ -57,10 +57,11 @@ Use it when the agent should save knowledge for later, look up prior solutions, 
 The three skills are designed to work together:
 
 1. Read the target repository root `SPEC.md` when present; otherwise use the built-in defaults from this skill series.
-2. Start with `spec-plan` to define the problem and acceptance criteria.
-3. Execute the implementation work in the normal coding loop.
-4. Use `spec-crlp` when feedback reveals gaps between the spec and the implementation.
-5. Persist reusable findings with `spec-index` so later tasks can benefit from them.
+2. Retrieve relevant memory with `spec-index` when prior decisions, constraints, pitfalls, or fixes could affect the task.
+3. Start with `spec-plan` to define the problem and acceptance criteria.
+4. Execute the implementation work in the normal coding loop.
+5. Use `spec-crlp` when feedback reveals gaps between the spec and the implementation.
+6. Persist reusable findings with `spec-index` so later tasks can benefit from them.
 
 This separation keeps each skill focused and reduces overlap between planning, fixing, and remembering.
 

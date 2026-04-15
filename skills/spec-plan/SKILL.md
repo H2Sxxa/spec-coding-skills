@@ -31,6 +31,9 @@ When no repository root `SPEC.md` is available, use these defaults:
 - validation behavior: prefer discoverable repository tooling; if no validation commands are discoverable, say validation is not configured yet
 - setup document: `SETUP.md`
 - knowledge-base location: `docs/knowledge-base/`
+- task spec location: `docs/specs/<slug>.md`
+- task execution mode: keep the plan in conversation for small, well-bounded tasks; persist it for complex, risky, or multi-turn work
+- context retrieval: query `spec-index` for relevant decisions, constraints, setup notes, pitfalls, and validation rules before planning non-trivial work
 
 ## Core responsibilities
 
@@ -41,6 +44,39 @@ When no repository root `SPEC.md` is available, use these defaults:
 - Identify edge cases, dependencies, and setup prerequisites.
 - Produce an execution plan that can guide implementation work.
 
+## Output mode
+
+Choose one output mode before finalizing the plan:
+
+- Conversation plan: Use this for small, well-bounded tasks where the user wants momentum and the plan only needs to guide the current turn.
+- Persisted task spec: Use this for multi-step, risky, ambiguous, review-heavy, or multi-turn work that needs stable acceptance criteria for later correction.
+
+Default persisted path: `docs/specs/<slug>.md`, unless the repository root `SPEC.md` defines a different location.
+
+When persisting a task spec, create or update the file and then continue into implementation only if the user asked for execution or the task clearly implies execution. If the user only asked for planning, stop after producing the spec.
+
+When using conversation plan mode, state that the plan is not being persisted and then proceed directly if the user asked for implementation.
+
+## Context retrieval before planning
+
+Before producing a plan for existing, non-trivial, risky, or multi-turn work, retrieve relevant memory through `spec-index`.
+
+Look for:
+
+- prior decisions that constrain the solution
+- existing architecture or product boundaries
+- setup requirements or environment gotchas
+- validation rules and known flaky checks
+- known pitfalls, edge cases, or implementation patterns
+
+Build retrieval queries from the user's request, likely components, file paths, tools, frameworks, domain terms, and error words.
+
+Use the retrieved memory only when it is relevant. Summarize the useful matches in the resulting spec under `Context From Memory`.
+
+If no relevant memory is found, say so briefly and continue. Do not block planning on an empty knowledge base.
+
+Skip retrieval for small, self-contained tasks where no durable project context is likely to matter.
+
 ## When this skill is not the right fit
 
 - If the implementation already exists and the main need is debugging or fixing regressions, use `spec-crlp`.
@@ -50,13 +86,15 @@ When no repository root `SPEC.md` is available, use these defaults:
 ## Planning workflow
 
 1. Restate the request as a concrete objective.
-2. Extract known constraints from the conversation, the repository, and the repository root `SPEC.md` when present.
-3. Identify what is in scope and what is not.
-4. Surface missing assumptions or dependencies that could change the solution.
-5. Translate the request into acceptance criteria that can later be validated.
-6. Call out failure modes, edge cases, setup requirements, and validation rules from the repository root `SPEC.md` when present, otherwise from the built-in defaults.
-7. Break the work into a practical execution sequence.
-8. Note open questions only when they are genuinely decision-shaping.
+2. Read the repository root `SPEC.md` when present and apply the built-in defaults for anything it does not define.
+3. Retrieve relevant memory through `spec-index` when the task is existing-project, non-trivial, risky, or likely to span turns.
+4. Extract known constraints from the conversation, the repository, repository preferences, and relevant memory.
+5. Identify what is in scope and what is not.
+6. Surface missing assumptions or dependencies that could change the solution.
+7. Translate the request into acceptance criteria that can later be validated.
+8. Call out failure modes, edge cases, setup requirements, and validation rules from the repository root `SPEC.md` when present, otherwise from the built-in defaults.
+9. Break the work into a practical execution sequence.
+10. Note open questions only when they are genuinely decision-shaping.
 
 ## Preferred spec structure
 
@@ -66,6 +104,7 @@ Prefer this shape unless the user asks for a different format:
 # Spec
 ## Goal
 ## Problem Statement
+## Context From Memory
 ## In Scope
 ## Out Of Scope
 ## Constraints
@@ -90,11 +129,24 @@ Good acceptance criteria usually answer questions like:
 
 Avoid vague statements like "works well" or "is user friendly" unless you translate them into something observable.
 
+Use Gherkin for behavior-oriented acceptance criteria when it improves precision:
+
+```gherkin
+Scenario: User completes the happy path
+  Given the required setup exists
+  When the user performs the target action
+  Then the expected observable result should happen
+```
+
+Keep non-behavioral acceptance criteria as plain Markdown bullets. Do not force Gherkin onto setup notes, implementation steps, or architectural decisions.
+
 ## Good habits
 
 - Prefer concrete boundaries over broad ambition.
+- Retrieve relevant memory before planning work where prior decisions or pitfalls could change the plan.
 - Make setup prerequisites explicit when they could block execution.
 - Reuse the repository root `SPEC.md` when present, otherwise apply the built-in defaults instead of redefining conventions per task.
+- Persist the task spec when future correction work will need a stable reference.
 - Name the files, systems, or components likely to be affected when that is already knowable.
 - Keep the plan implementation-oriented rather than managerial.
 - Make reasonable assumptions when the risk is low, and label them clearly.
