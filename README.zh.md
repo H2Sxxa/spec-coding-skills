@@ -110,6 +110,15 @@ docs/knowledge-base/
 
 这是展示用 benchmark，不是严格统计结论。它每个 prompt 只跑一次，评分重点是输出是否包含这些 skills 设计目标中的结构，例如 `Context From Memory`、`Relevant Memory`、`Memory To Capture`、YAML frontmatter 和 `trigger_tags`。
 
+| Eval | 检查内容 | Baseline | With skills | 对真实开发有什么用 |
+| --- | --- | ---: | ---: | --- |
+| 规划已有功能 | 范围边界、验收标准、验证计划、执行计划、历史记忆上下文 | 33.3% | 100.0% | 在实现前减少需求模糊，让后续修复有稳定参照。 |
+| 修正失败测试 | correction summary、相关记忆、root cause、validation、residual risk、memory to capture | 0.0% | 100.0% | 让调试基于证据推进，而不是猜测式 patch，并沉淀可复用经验。 |
+| 保存可复用根因 | YAML frontmatter、`root-cause` 分类、trigger tags、applies-when、validation、相关上下文 | 0.0% | 100.0% | 把一次性的排障经验变成后续任务可检索的项目记忆。 |
+| 总体 | 三个 demo prompts 的平均通过率 | 11.1% | 100.0% | 在这个小样本中展示 skills 对流程结构、可追踪性和记忆复用的提升。 |
+
+这些指标刻意关注开发流程，而不是直接宣称“生成代码一定更好”。它们衡量的是 Agent 是否产出了让真实开发更安全的工作产物：清晰范围、可测试验收标准、可复现纠错步骤、可检索项目记忆。
+
 已提交的 eval prompts 在 [evals/evals.json](./evals/evals.json)。复现流程和本地 review 页面生成方法见 [TESTING.md](./TESTING.md)。
 
 ## 仓库结构

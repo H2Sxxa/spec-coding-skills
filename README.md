@@ -110,6 +110,15 @@ This repository includes a small 3-prompt demo benchmark for the three core skil
 
 This is a demonstration benchmark, not a statistically rigorous claim. It uses one run per prompt and checks whether outputs include the structures these skills are designed to produce, such as `Context From Memory`, `Relevant Memory`, `Memory To Capture`, YAML frontmatter, and `trigger_tags`.
 
+| Eval | What was checked | Baseline | With skills | Why it matters in real work |
+| --- | --- | ---: | ---: | --- |
+| Planning an existing feature | Scope boundaries, acceptance criteria, validation plan, execution plan, and memory context | 33.3% | 100.0% | Reduces vague requirements before implementation and gives later fixes a stable reference. |
+| Correcting a failing test | Correction summary, relevant memory, root cause, validation, residual risk, and memory to capture | 0.0% | 100.0% | Makes debugging evidence-driven instead of patch-by-guesswork, and records reusable lessons. |
+| Saving a reusable root cause | YAML frontmatter, `root-cause` classification, trigger tags, applies-when, validation, and related context | 0.0% | 100.0% | Turns one-off debugging knowledge into searchable project memory for future tasks. |
+| Overall | Mean pass rate across the three demo prompts | 11.1% | 100.0% | Shows the skills improve process structure, traceability, and memory reuse in this small demo. |
+
+These metrics are intentionally process-oriented. They do not claim that the generated code is better by itself; they measure whether the agent produced the workflow artifacts that make real development safer: clear scope, testable acceptance criteria, reproducible correction steps, and retrievable project memory.
+
 The committed eval prompts live in [evals/evals.json](./evals/evals.json). See [TESTING.md](./TESTING.md) for the reproducible workflow and local review-page generation.
 
 ## Repository Layout
