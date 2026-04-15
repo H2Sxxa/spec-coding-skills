@@ -1,4 +1,4 @@
-# spec-coding
+# spec-coding-skills
 
 Published skills for spec-driven coding workflows with planning, correction loops, and memory retrieval.
 
@@ -9,6 +9,26 @@ The preferred implementation model in this repository is skill-first:
 - Use `SKILL.md` for workflow and trigger guidance.
 - Use bundled `scripts/` for deterministic or repetitive actions.
 - Use bundled `references/` for project conventions, examples, and reusable context.
+
+## Installation
+
+Install all skills from the current GitHub repository:
+
+```bash
+npx skills add H2Sxxa/spec-coding-skills --all
+```
+
+Install only selected skills:
+
+```bash
+npx skills add H2Sxxa/spec-coding-skills --skill spec-plan --skill spec-crlp --skill spec-index
+```
+
+Install from a local checkout while developing:
+
+```bash
+npx skills add . --all
+```
 
 ## Overview
 
@@ -65,6 +85,38 @@ The three skills are designed to work together:
 
 This separation keeps each skill focused and reduces overlap between planning, fixing, and remembering.
 
+## Repository Overrides
+
+The skills work without project-specific configuration. By default, they use the conventions in [SPEC.md](./SPEC.md).
+
+For a target repository that needs custom lint commands, validation order, setup docs, or knowledge-base paths, copy [templates/repository-SPEC.md](./templates/repository-SPEC.md) into the target repository root as `SPEC.md` and edit it there.
+
+Preference order:
+
+1. Direct user instructions.
+2. Target repository root `SPEC.md`.
+3. Built-in defaults from this repository.
+4. Tooling discovered from the target repository when allowed by the defaults.
+
+Partial `SPEC.md` files are fine. Missing fields fall back to the built-in defaults.
+
+## Knowledge Base
+
+`spec-index` stores durable project memory as Markdown entries with YAML frontmatter.
+
+The default location is:
+
+```text
+docs/knowledge-base/
+```
+
+The `spec-index` skill also bundles:
+
+- [template.md](./skills/spec-index/references/template.md) for the canonical memory entry format
+- [index.py](./skills/spec-index/scripts/index.py) for deterministic `add`, `search`, and `rebuild` operations
+
+The helper script uses Python standard library only and does not require network access.
+
 ## Repository Layout
 
 ```text
@@ -75,16 +127,21 @@ skills/
     SKILL.md
   spec-index/
     SKILL.md
+    references/
+      template.md
+    scripts/
+      index.py
 docs/
   knowledge-base/
     index.md
+templates/
+  repository-SPEC.md
 .agents/
   skills/
     skill-creator/
 GOAL.md
 SPEC.md
 README.md
-SETUP.md
 ```
 
 ## Current Status
@@ -93,19 +150,24 @@ This repository is in an early stage.
 
 - The three primary skills now have draft instruction bodies and a documented default preference model.
 - `SPEC.md` documents the built-in defaults that target repositories can override with their own root `SPEC.md`.
+- `spec-index` includes a bundled Markdown template and Python indexing helper.
 - The bundled `skill-creator` skill is available to help iterate on descriptions, evals, and packaging.
 
 ## Next Steps
 
 Recommended improvements for this repository:
 
-1. Add a concrete example repository-level `SPEC.md` template for users who want to override the defaults.
-2. Add realistic eval prompts to verify skill triggering and behavior.
-3. Bundle task-specific `scripts/` and `references/` where they reduce repeated work.
-4. Start populating the knowledge base with the first real reusable entries.
+1. Add realistic eval prompts to verify skill triggering and behavior.
+2. Add example memory entries that demonstrate useful trigger tags.
+3. Package and test install through `npx skills add`.
+4. Start collecting feedback from real projects.
 
 ## Development Notes
 
 - Each skill is kept in its own folder under `skills/` so it can evolve independently.
 - Descriptions should be explicit about trigger conditions, because description quality strongly affects whether a skill is selected.
 - Keep the responsibilities narrow: planning in `spec-plan`, correction in `spec-crlp`, memory in `spec-index`.
+
+## License
+
+MIT License. See [LICENSE](./LICENSE).
