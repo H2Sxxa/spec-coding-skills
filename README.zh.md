@@ -87,6 +87,20 @@ npx skills add . --all
 
 仓库级 `SPEC.md` 可以只写一部分字段，缺失字段会回退到内置默认规则。
 
+### 输出语言
+
+如果想改变生成的 spec、correction summary、knowledge-base entry 的语言，可以在目标仓库根目录的 `SPEC.md` 里增加文档语言偏好：
+
+```md
+## Documentation Language
+
+- Default documentation language: Simplified Chinese.
+- Write user-facing specs, plans, correction summaries, and knowledge-base entries in Simplified Chinese.
+- Keep code identifiers, commands, file paths, API names, error messages, and quoted logs in their original language.
+```
+
+用户当次指令仍然优先。例如仓库默认中文，但用户某次明确要求英文输出，则该次任务应该按用户要求使用英文。
+
 ## Knowledge Base
 
 `spec-index` 使用带 YAML frontmatter 的 Markdown 文件保存长期项目记忆。

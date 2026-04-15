@@ -87,6 +87,20 @@ Preference order:
 
 Partial repository `SPEC.md` files are fine. Missing fields fall back to the built-in defaults.
 
+### Output Language
+
+To change the language used in generated specs, correction summaries, and knowledge-base entries, add a documentation language preference to the target repository root `SPEC.md`:
+
+```md
+## Documentation Language
+
+- Default documentation language: Simplified Chinese.
+- Write user-facing specs, plans, correction summaries, and knowledge-base entries in Simplified Chinese.
+- Keep code identifiers, commands, file paths, API names, error messages, and quoted logs in their original language.
+```
+
+Direct user instructions still take priority. For example, if a repository defaults to Chinese but the user asks for English in one task, the skills should follow the user for that task.
+
 ## Knowledge Base
 
 `spec-index` stores durable project memory as Markdown entries with YAML frontmatter.
