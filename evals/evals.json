@@ -1,0 +1,23 @@
+{
+  "skill_name": "spec-coding-skills",
+  "evals": [
+    {
+      "id": "plan-existing-feature",
+      "prompt": "Before coding, turn this rough feature idea into a spec with acceptance criteria: add team invite links to an existing SaaS app.",
+      "expected_output": "Uses spec-plan, checks for repository SPEC.md, retrieves relevant memory when useful, and outputs scope, acceptance criteria, validation plan, and execution plan.",
+      "files": []
+    },
+    {
+      "id": "crlp-test-failure",
+      "prompt": "A test started failing after a refactor. Diagnose the root cause against the current spec and propose a fix-verify loop.",
+      "expected_output": "Uses spec-crlp, retrieves relevant memory, distinguishes evidence from assumptions, and outputs root cause, fix, validation, and memory to capture.",
+      "files": []
+    },
+    {
+      "id": "index-root-cause",
+      "prompt": "Save this reusable root cause: auth middleware returns 401 in preview because required env vars are missing.",
+      "expected_output": "Uses spec-index, classifies as root-cause or setup, generates trigger tags, and creates or presents a normalized memory entry.",
+      "files": []
+    }
+  ]
+}

@@ -104,6 +104,14 @@ Bundled resources:
 
 The helper script uses the Python standard library only and does not require network access.
 
+## Demo Benchmark
+
+This repository includes a small 3-prompt demo benchmark for the three core skills. In one local run with Codex, the skill-guided outputs passed a deterministic skill-aligned rubric at `100.0%`, compared with `11.1%` for baseline generic outputs: `+88.9` percentage points.
+
+This is a demonstration benchmark, not a statistically rigorous claim. It uses one run per prompt and checks whether outputs include the structures these skills are designed to produce, such as `Context From Memory`, `Relevant Memory`, `Memory To Capture`, YAML frontmatter, and `trigger_tags`.
+
+The committed eval prompts live in [evals/evals.json](./evals/evals.json). See [TESTING.md](./TESTING.md) for the reproducible workflow and local review-page generation.
+
 ## Repository Layout
 
 ```text
@@ -121,8 +129,11 @@ skills/
 docs/
   knowledge-base/
     index.md
+evals/
+  evals.json
 templates/
   repository-SPEC.md
+TESTING.md
 SPEC.md
 README.md
 README.zh.md
@@ -131,9 +142,9 @@ LICENSE
 
 ## Roadmap
 
-- Add realistic eval prompts for trigger and behavior testing.
+- Expand eval coverage beyond the initial 3-prompt demo.
 - Add example memory entries that demonstrate useful trigger tags.
-- Package and test installation through `npx skills add`.
+- Run multi-sample benchmarks for more reliable before/after claims.
 - Collect feedback from real projects.
 
 ## License

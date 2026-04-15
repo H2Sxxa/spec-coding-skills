@@ -104,6 +104,14 @@ docs/knowledge-base/
 
 这个 helper script 只使用 Python 标准库，不需要网络访问。
 
+## Demo Benchmark
+
+这个仓库包含一个覆盖三个核心 skills 的 3-prompt demo benchmark。在一次本地 Codex 运行中，使用 skills 的输出在 deterministic skill-aligned rubric 下通过率为 `100.0%`，普通 baseline 输出为 `11.1%`，差值为 `+88.9` 个百分点。
+
+这是展示用 benchmark，不是严格统计结论。它每个 prompt 只跑一次，评分重点是输出是否包含这些 skills 设计目标中的结构，例如 `Context From Memory`、`Relevant Memory`、`Memory To Capture`、YAML frontmatter 和 `trigger_tags`。
+
+已提交的 eval prompts 在 [evals/evals.json](./evals/evals.json)。复现流程和本地 review 页面生成方法见 [TESTING.md](./TESTING.md)。
+
 ## 仓库结构
 
 ```text
@@ -121,8 +129,11 @@ skills/
 docs/
   knowledge-base/
     index.md
+evals/
+  evals.json
 templates/
   repository-SPEC.md
+TESTING.md
 SPEC.md
 README.md
 README.zh.md
@@ -131,9 +142,9 @@ LICENSE
 
 ## Roadmap
 
-- 增加真实 eval prompts，用于测试触发和行为。
+- 扩展 eval 覆盖范围，不只停留在当前 3-prompt demo。
 - 增加示例 memory entries，展示 trigger tags 的写法。
-- 通过 `npx skills add` 测试安装流程。
+- 运行多样本 benchmark，得到更可靠的前后对比结论。
 - 从真实项目中收集反馈并迭代。
 
 ## License
