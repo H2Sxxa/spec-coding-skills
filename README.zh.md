@@ -76,7 +76,7 @@ npx skills add . --all
 
 这些 skills 不依赖项目配置也可以工作，默认规则记录在 [SPEC.md](./SPEC.md)。
 
-如果目标仓库需要自定义 lint 命令、验证顺序、setup 文档、任务 spec 路径或知识库路径，可以把 [templates/repository-SPEC.md](./templates/repository-SPEC.md) 复制到目标仓库根目录，命名为 `SPEC.md` 后按需编辑。
+如果目标仓库需要自定义 lint 命令、验证顺序、任务 spec 路径或知识库路径，可以把 [templates/repository-SPEC.md](./templates/repository-SPEC.md) 复制到目标仓库根目录，命名为 `SPEC.md` 后按需编辑。
 
 优先级如下：
 

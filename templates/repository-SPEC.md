@@ -21,7 +21,6 @@ Delete anything that does not apply. Missing fields fall back to the built-in de
 - Task spec root: `docs/specs/`
 - Knowledge base root: `docs/knowledge-base/`
 - Knowledge base index: `docs/knowledge-base/index.md`
-- Setup document: `SETUP.md`
 
 ## Workflow
 

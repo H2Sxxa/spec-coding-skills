@@ -16,7 +16,7 @@ Before doing anything else, look for a `SPEC.md` in the target repository root.
 If it exists, treat it as the repository-specific preference layer for:
 
 - shared validation rules
-- setup expectations
+- environment and configuration constraints that affect planning
 - knowledge-base location
 - cross-skill workflow conventions
 
@@ -29,7 +29,6 @@ If it is partial, use the fields it defines and fall back to defaults for the re
 When no repository root `SPEC.md` is available, use these defaults:
 
 - validation behavior: prefer discoverable repository tooling; if no validation commands are discoverable, say validation is not configured yet
-- setup document: `SETUP.md`
 - knowledge-base location: `docs/knowledge-base/`
 - task spec location: `docs/specs/<slug>.md`
 - task execution mode: keep the plan in conversation for small, well-bounded tasks; persist it for complex, risky, or multi-turn work

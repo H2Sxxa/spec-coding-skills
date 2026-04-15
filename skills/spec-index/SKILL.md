@@ -24,7 +24,7 @@ If it exists, treat it as the repository-specific preference layer for:
 
 - the knowledge-base location
 - capture categories and storage expectations
-- setup documentation boundaries
+- environment and configuration gotchas that are worth remembering
 - cross-skill workflow conventions
 
 If it is missing, use the built-in defaults for this skill series instead of blocking on the missing file.
@@ -37,7 +37,6 @@ When no repository root `SPEC.md` is available, use these defaults:
 
 - knowledge-base root: `docs/knowledge-base/`
 - knowledge-base index: `docs/knowledge-base/index.md`
-- setup document: `SETUP.md`
 - entry template: `references/template.md`
 - indexing helper: `scripts/index.py`
 

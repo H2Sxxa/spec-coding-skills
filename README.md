@@ -76,7 +76,7 @@ For small, self-contained tasks, the skills are allowed to stay lightweight and 
 
 The skills work without project-specific configuration. By default, they use the conventions in [SPEC.md](./SPEC.md).
 
-For a target repository that needs custom lint commands, validation order, setup docs, task spec paths, or knowledge-base paths, copy [templates/repository-SPEC.md](./templates/repository-SPEC.md) into the target repository root as `SPEC.md` and edit it there.
+For a target repository that needs custom lint commands, validation order, task spec paths, or knowledge-base paths, copy [templates/repository-SPEC.md](./templates/repository-SPEC.md) into the target repository root as `SPEC.md` and edit it there.
 
 Preference order:
 

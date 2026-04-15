@@ -29,7 +29,6 @@ If it is partial, use the fields it defines and fall back to defaults for the re
 When no repository root `SPEC.md` is available, use these defaults:
 
 - validation behavior: prefer discoverable repository tooling; if no validation commands are discoverable, say validation is not configured yet
-- setup document: `SETUP.md`
 - knowledge-base location: `docs/knowledge-base/`
 - context retrieval: query `spec-index` for similar symptoms, root causes, fix patterns, setup gotchas, and validation rules before correction work
 
