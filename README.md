@@ -55,9 +55,9 @@ Use it when code is failing checks, drifting from acceptance criteria, or needs 
 
 ### `spec-index`
 
-Captures and retrieves durable project memory such as decisions, constraints, setup steps, root causes, fixes, patterns, and pitfalls.
+Captures, retrieves, and maintains durable project memory such as decisions, constraints, setup steps, root causes, fixes, patterns, and pitfalls.
 
-Use it when the agent should save reusable knowledge, look up prior solutions, or feed historical context into planning and correction loops.
+Use it when the agent should save reusable knowledge, look up prior solutions, investigate existing notes, clean up weak trigger tags, or feed historical context into planning and correction loops.
 
 ## Default Workflow
 

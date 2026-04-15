@@ -45,8 +45,19 @@ When no repository root `SPEC.md` is available, use these defaults:
 
 - Save durable knowledge in a normalized, retrieval-friendly form.
 - Retrieve relevant past knowledge using concrete keywords and context clues.
+- Investigate, update, and reorganize existing knowledge-base entries when memory quality matters.
 - Reduce repeated debugging and repeated planning by surfacing what is already known.
 - Feed high-value context back into `spec-plan` and `spec-crlp`.
+
+## Operating modes
+
+Choose one mode from the user's intent:
+
+- Retrieve mode: Use when the user wants to know whether the project already has related decisions, root causes, setup notes, or fix patterns.
+- Capture mode: Use when the user wants to save a new reusable finding, decision, setup rule, or root cause.
+- Investigate mode: Use when the user wants to inspect, audit, clean up, reorganize, update, deduplicate, or validate existing knowledge-base entries.
+
+If the user asks to "整理", "调查", "audit", "clean up", "review existing knowledge", "update old notes", "merge duplicates", or "fix tags", use investigate mode.
 
 ## What belongs in the index
 
@@ -119,6 +130,57 @@ Prefer lowercase, hyphenated tags. Keep them specific enough to retrieve the ent
 7. Include the evidence, resolution, or decision rationale.
 8. Avoid creating a second entry when an update to an existing one would be cleaner.
 
+## Investigate workflow
+
+Use this workflow when maintaining an existing knowledge base:
+
+1. Resolve the knowledge-base root from the repository root `SPEC.md` when present, otherwise use the built-in default location.
+2. Read `index.md` and scan all memory entries under the knowledge-base root.
+3. Check for broken index links, entries missing from the index, duplicate or overlapping entries, weak trigger tags, missing metadata, stale setup notes, conflicting rules, and entries without validation context.
+4. Group findings by action: keep, update, merge, split, archive, or needs human review.
+5. Prefer safe updates first: add missing trigger tags, fix category metadata, improve summaries, fill `Applies When`, and add validation context.
+6. Ask before destructive changes such as deleting entries, overwriting substantial content, or merging entries where information could be lost.
+7. After manual edits, run `scripts/index.py rebuild` when Python is available.
+8. Produce an investigation report summarizing what changed, what was left untouched, and what still needs review.
+
+## Investigation checks
+
+Check each entry for:
+
+- exactly one primary `type`
+- meaningful `trigger_tags`
+- a clear `Summary`
+- an `Applies When` section that explains retrieval conditions
+- a `Decision Or Root Cause` section with validated knowledge, not speculation
+- a `Resolution Or Rule` section that is actionable
+- a `Validation` section that explains how the knowledge was confirmed or should be checked
+- related files or systems when they help future retrieval
+
+Check the index for:
+
+- links to missing files
+- entries that exist on disk but are missing from `index.md`
+- duplicate titles or near-duplicate summaries
+- categories that are too broad or inconsistent
+- stale entries that should be updated or archived
+
+## Preferred investigation report shape
+
+Prefer this structure after investigating existing memory:
+
+```markdown
+# Knowledge Base Investigation
+## Scope
+## Summary
+## Entries Reviewed
+## Changes Applied
+## Recommended Updates
+## Duplicates Or Conflicts
+## Broken Or Missing Index Links
+## Needs Human Review
+## Rebuild Status
+```
+
 ## Preferred entry shape
 
 Prefer the bundled `references/template.md` when saving or presenting memory. The entry should include this shape:
@@ -170,3 +232,6 @@ If the default storage location is clearly unsuitable for the task or the reposi
 - "Save this root cause so we do not lose it after this session."
 - "Have we solved something like this migration issue before?"
 - "Index the setup steps and env gotchas from today's work so future tasks can retrieve them."
+- "Audit the knowledge base and fix weak trigger tags."
+- "Merge duplicate root-cause entries and rebuild the index."
+- "Investigate existing setup notes and mark anything stale."

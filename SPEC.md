@@ -58,6 +58,8 @@ If a repository `SPEC.md` is partial, use the values it defines and fall back to
 - Default indexing helper: use the `spec-index` bundled `scripts/index.py` when available.
 - Save durable knowledge as concise Markdown entries linked from the index.
 - Capture only validated, reusable knowledge.
+- Support three memory modes: retrieve existing knowledge, capture new knowledge, and investigate or maintain existing knowledge.
+- Investigation should check duplicates, stale entries, weak trigger tags, missing metadata, broken index links, and conflicting rules.
 - Preferred capture categories: decisions, constraints, setup rules, root causes, fixes, patterns, and pitfalls.
 
 ## Default Setup Behavior

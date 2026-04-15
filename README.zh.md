@@ -55,9 +55,9 @@ npx skills add . --all
 
 ### `spec-index`
 
-保存和检索长期项目记忆，例如决策、约束、setup 步骤、问题根因、修复模式、已知坑点。
+保存、检索和维护长期项目记忆，例如决策、约束、setup 步骤、问题根因、修复模式、已知坑点。
 
-适合在 Agent 需要保存可复用知识、查找历史方案，或者把历史上下文注入 plan/correction 流程时使用。
+适合在 Agent 需要保存可复用知识、查找历史方案、调查已有 notes、整理弱 trigger tags，或者把历史上下文注入 plan/correction 流程时使用。
 
 ## 默认工作流
 
