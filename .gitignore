@@ -3,3 +3,7 @@
 skills-lock.json
 __pycache__/
 *.pyc
+website/node_modules/
+website/.docusaurus/
+website/build/
+**/node_modules/

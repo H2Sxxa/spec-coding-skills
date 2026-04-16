@@ -39,6 +39,18 @@ Install from a local checkout while developing:
 npx skills add . --all
 ```
 
+## Website
+
+A standalone Docusaurus landing site lives in `website/`.
+
+Run it locally:
+
+```bash
+cd website
+npm install
+npm start
+```
+
 ## Skills
 
 ### `spec-plan`
@@ -156,6 +168,10 @@ evals/
   evals.json
 templates/
   repository-SPEC.md
+website/
+  docusaurus.config.ts
+  src/
+  docs/
 TESTING.md
 SPEC.md
 README.md

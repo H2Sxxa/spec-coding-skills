@@ -1,0 +1,65 @@
+:root {
+  --ifm-color-primary: #7b5228;
+  --ifm-color-primary-dark: #6e4a24;
+  --ifm-color-primary-darker: #684622;
+  --ifm-color-primary-darkest: #56391c;
+  --ifm-color-primary-light: #885a2c;
+  --ifm-color-primary-lighter: #8e5e2e;
+  --ifm-color-primary-lightest: #a56d34;
+  --ifm-background-color: #fffaf3;
+  --ifm-navbar-background-color: rgba(255, 250, 243, 0.82);
+  --ifm-navbar-link-color: #1e1f1b;
+  --ifm-heading-color: #1e1f1b;
+  --ifm-font-color-base: #2e312b;
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: "Aptos", "Segoe UI Variable", "Trebuchet MS", sans-serif;
+  --ifm-font-family-monospace: "IBM Plex Mono", "Consolas", monospace;
+  --ifm-heading-font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #d6a063;
+  --ifm-color-primary-dark: #d1944d;
+  --ifm-color-primary-darker: #cd8d40;
+  --ifm-color-primary-darkest: #be7820;
+  --ifm-color-primary-light: #dbac79;
+  --ifm-color-primary-lighter: #deb286;
+  --ifm-color-primary-lightest: #e7c4a8;
+  --ifm-background-color: #191812;
+  --ifm-navbar-background-color: rgba(25, 24, 18, 0.82);
+  --ifm-heading-color: #f7f3ec;
+  --ifm-font-color-base: #ded8cf;
+}
+
+.navbar {
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(30, 31, 27, 0.08);
+}
+
+.navbar__brand,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ifm-heading-font-family);
+}
+
+.navbar__title {
+  letter-spacing: -0.03em;
+}
+
+.button {
+  border-radius: 999px;
+}
+
+.theme-code-block,
+code,
+pre {
+  border-radius: 0.9rem;
+}
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}

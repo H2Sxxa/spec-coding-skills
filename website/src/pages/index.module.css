@@ -1,0 +1,439 @@
+.page {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(215, 154, 86, 0.2), transparent 26rem),
+    radial-gradient(circle at 90% 8%, rgba(70, 116, 103, 0.18), transparent 24rem),
+    linear-gradient(180deg, #fffaf3 0%, #f5efe3 48%, #f0eadc 100%);
+  color: #1e201b;
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(30, 32, 27, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 32, 27, 0.025) 1px, transparent 1px);
+  background-size: 2.75rem 2.75rem;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 85%);
+}
+
+.hero,
+.signalSection,
+.featureSection,
+.workflowSection,
+.benchmarkSection,
+.docsSection {
+  position: relative;
+  max-width: 78rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.95fr);
+  gap: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 2.75rem;
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.kicker {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(42, 53, 48, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  color: #6f4b22;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 14px 34px rgba(31, 26, 18, 0.06);
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  max-width: 11ch;
+}
+
+.heroSubtitle {
+  max-width: 42rem;
+  margin: 0;
+  color: #464d44;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.primaryButton {
+  background: #1f2c29;
+  border-color: #1f2c29;
+  box-shadow: 0 18px 32px rgba(31, 44, 41, 0.18);
+}
+
+.primaryButton:hover {
+  background: #16201e;
+  border-color: #16201e;
+}
+
+.secondaryButton {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(31, 44, 41, 0.12);
+  color: #1f2c29;
+}
+
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.92);
+  color: #16201e;
+}
+
+.installBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 0.35rem;
+}
+
+.installLabel {
+  color: #6f4b22;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.installCode,
+.terminalBody {
+  margin: 0;
+  border-radius: 1.1rem;
+  background: #131714;
+  color: #f7f1e5;
+  overflow-x: auto;
+}
+
+.installCode {
+  padding: 1rem 1.1rem;
+  box-shadow: 0 26px 54px rgba(18, 24, 21, 0.16);
+}
+
+.heroPanel {
+  display: flex;
+  align-items: stretch;
+}
+
+.heroStack {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+}
+
+.miniCard,
+.signalCard,
+.featureCard,
+.workflowCard,
+.metricCard,
+.noteCard,
+.docCard {
+  border: 1px solid rgba(31, 44, 41, 0.09);
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 24px 60px rgba(29, 23, 14, 0.07);
+  backdrop-filter: blur(12px);
+}
+
+.miniCard {
+  padding: 1.35rem;
+}
+
+.miniLabel {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: #6f4b22;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.miniTitle {
+  margin: 0 0 0.8rem;
+  font-size: 1.65rem;
+  line-height: 1.08;
+}
+
+.miniCard p {
+  margin: 0;
+  color: #464d44;
+  line-height: 1.7;
+}
+
+.terminalCard {
+  border-radius: 1.4rem;
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(18, 24, 21, 0.22);
+}
+
+.terminalHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.1rem;
+  background: linear-gradient(90deg, #1d2623 0%, #243530 100%);
+  color: #d6d9d2;
+  font-size: 0.83rem;
+  letter-spacing: 0.03em;
+}
+
+.terminalBody {
+  padding: 1.15rem;
+  line-height: 1.75;
+}
+
+.signalSection {
+  padding-top: 0.5rem;
+  padding-bottom: 1.75rem;
+}
+
+.signalGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.signalCard {
+  padding: 1.25rem;
+}
+
+.signalLabel {
+  display: inline-block;
+  margin-bottom: 0.65rem;
+  color: #6f4b22;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.signalValue {
+  margin: 0 0 0.7rem;
+  color: #18211e;
+  font-size: 1.45rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.signalDetail {
+  margin: 0;
+  color: #464d44;
+  line-height: 1.7;
+}
+
+.featureSection,
+.workflowSection,
+.benchmarkSection,
+.docsSection {
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+}
+
+.sectionHeader {
+  max-width: 48rem;
+  margin-bottom: 1.6rem;
+}
+
+.sectionHeader h2 {
+  margin-bottom: 0.65rem;
+}
+
+.sectionHeader p {
+  margin: 0;
+  color: #464d44;
+  line-height: 1.72;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.featureCard,
+.docCard {
+  padding: 1.35rem;
+}
+
+.featureEyebrow {
+  display: inline-block;
+  margin-bottom: 0.7rem;
+  color: #2b6253;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.featureCard h3,
+.workflowCard h3,
+.noteCard h3,
+.docCard h3 {
+  margin-bottom: 0.75rem;
+}
+
+.featureCard p,
+.workflowCard p,
+.noteCard p,
+.docCard p {
+  margin: 0;
+  color: #464d44;
+  line-height: 1.72;
+}
+
+.inlineLink {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1rem;
+  color: #1f2c29;
+  font-weight: 700;
+}
+
+.inlineLink:hover {
+  color: #6f4b22;
+  text-decoration: none;
+}
+
+.workflowGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.workflowCard {
+  padding: 1.3rem;
+}
+
+.workflowLabel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(111, 75, 34, 0.12);
+  color: #6f4b22;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.benchmarkLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 1rem;
+}
+
+.metricCard {
+  padding: 1.25rem;
+}
+
+.metricTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.metricTable th,
+.metricTable td {
+  padding: 0.9rem 0.8rem;
+  border-bottom: 1px solid rgba(31, 44, 41, 0.08);
+  text-align: left;
+}
+
+.metricTable th {
+  color: #6f4b22;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.benchmarkNotes {
+  display: grid;
+  gap: 1rem;
+}
+
+.noteCard {
+  padding: 1.25rem;
+}
+
+.docGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 996px) {
+  .hero,
+  .signalGrid,
+  .featureGrid,
+  .workflowGrid,
+  .benchmarkLayout,
+  .docGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 3.75rem;
+  }
+
+  .heroTitle {
+    max-width: none;
+    font-size: clamp(2.6rem, 10vw, 4rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero,
+  .signalSection,
+  .featureSection,
+  .workflowSection,
+  .benchmarkSection,
+  .docsSection {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .metricTable th,
+  .metricTable td {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}

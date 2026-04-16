@@ -39,6 +39,18 @@ npx skills add H2Sxxa/spec-coding-skills --skill spec-plan --skill spec-crlp --s
 npx skills add . --all
 ```
 
+## Website
+
+仓库里还包含一个独立的 Docusaurus landing site，目录在 `website/`。
+
+本地运行：
+
+```bash
+cd website
+npm install
+npm start
+```
+
 ## Skills
 
 ### `spec-plan`
@@ -156,6 +168,10 @@ evals/
   evals.json
 templates/
   repository-SPEC.md
+website/
+  docusaurus.config.ts
+  src/
+  docs/
 TESTING.md
 SPEC.md
 README.md
