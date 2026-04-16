@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "spec-coding-skills",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "spec-coding-skills 标志",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Docs": {
+    "message": "文档",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Benchmark": {
+    "message": "基准",
+    "description": "Navbar item with label Benchmark"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

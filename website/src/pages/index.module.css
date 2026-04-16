@@ -41,10 +41,10 @@
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
-  align-items: center;
   gap: clamp(1.6rem, 3vw, 2.6rem);
   padding-top: 4.5rem;
   padding-bottom: 2rem;
+  min-height: clamp(34rem, 78vh, 42rem);
 }
 
 .heroCopy {
@@ -53,6 +53,7 @@
   flex-direction: column;
   gap: 1.1rem;
   align-items: flex-start;
+  justify-content: center;
   text-align: left;
 }
 
@@ -73,13 +74,14 @@
 
 .heroTitle {
   margin: 0;
-  max-width: 9.5ch;
+  max-width: min(34rem, 100%);
   color: #18211e;
   font-family: var(--ifm-font-family-base);
   font-size: clamp(3.15rem, 5.6vw, 5rem);
   font-weight: 800;
   line-height: 0.96;
   letter-spacing: -0.04em;
+  text-wrap: balance;
 }
 
 .heroSubtitle {
@@ -88,6 +90,7 @@
   color: #464d44;
   font-size: 1.04rem;
   line-height: 1.68;
+  text-wrap: pretty;
 }
 
 .actions {
@@ -124,13 +127,11 @@
   flex-direction: column;
   gap: 0.55rem;
   width: 100%;
-  margin-top: 0;
   padding: 0.95rem 1rem 1rem;
   border: 1px solid rgba(31, 44, 41, 0.09);
   border-radius: 1.2rem;
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 18px 40px rgba(29, 23, 14, 0.06);
-  align-items: stretch;
 }
 
 .installHeader {
@@ -169,12 +170,10 @@
 
 .heroPanel {
   display: flex;
-  align-items: stretch;
-  padding-top: 0;
+  min-height: 100%;
 }
 
 .heroCard,
-.signalCard,
 .featureCard,
 .workflowCard,
 .metricCard,
@@ -192,8 +191,10 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 0.95rem;
   width: 100%;
+  min-height: 100%;
   padding: 1.25rem;
   background:
     radial-gradient(circle at top right, rgba(111, 75, 34, 0.12), transparent 12rem),
@@ -219,6 +220,7 @@
   font-family: var(--ifm-heading-font-family);
   font-size: clamp(1.45rem, 2.2vw, 1.9rem);
   line-height: 1.18;
+  text-wrap: balance;
 }
 
 .heroPointList {
@@ -259,7 +261,6 @@
   display: grid;
   grid-template-columns: minmax(16rem, 0.9fr) minmax(0, 1.1fr);
   gap: 1rem;
-  align-items: stretch;
 }
 
 .signalGrid {
@@ -294,16 +295,17 @@
   font-size: 1.25rem;
   line-height: 1.15;
   font-weight: 700;
+  text-wrap: balance;
 }
 
 .signalDetail {
   margin: 0;
   color: #464d44;
   line-height: 1.7;
+  text-wrap: pretty;
 }
 
 .featureSection,
-.workflowSection,
 .benchmarkSection,
 .docsSection {
   padding-top: 1rem;
@@ -317,12 +319,14 @@
 
 .sectionHeader h2 {
   margin-bottom: 0.65rem;
+  text-wrap: balance;
 }
 
 .sectionHeader p {
   margin: 0;
   color: #464d44;
   line-height: 1.72;
+  text-wrap: pretty;
 }
 
 .featureGrid {
@@ -367,6 +371,7 @@
   margin: 0;
   color: #464d44;
   line-height: 1.72;
+  text-wrap: pretty;
 }
 
 .inlineLink {
@@ -495,6 +500,7 @@
   margin: 0;
   font-size: 1.2rem;
   color: #fff4e2;
+  text-wrap: balance;
 }
 
 .metricImpact {
@@ -544,6 +550,7 @@
   margin: 0;
   color: #d4ccbf;
   line-height: 1.68;
+  text-wrap: pretty;
 }
 
 .benchmarkNotes {
@@ -566,6 +573,28 @@
 .docCard {
   box-shadow: none;
   background: rgba(255, 255, 255, 0.56);
+}
+
+:global(html[lang='zh-CN']) .kicker,
+:global(html[lang='zh-CN']) .installLabel,
+:global(html[lang='zh-CN']) .heroCardLabel,
+:global(html[lang='zh-CN']) .signalLabel,
+:global(html[lang='zh-CN']) .featureEyebrow,
+:global(html[lang='zh-CN']) .workflowLabel,
+:global(html[lang='zh-CN']) .metricSummaryLabel,
+:global(html[lang='zh-CN']) .metricLabel,
+:global(html[lang='zh-CN']) .metricImpact {
+  letter-spacing: 0.02em;
+}
+
+:global(html[lang='zh-CN']) .heroTitle {
+  max-width: min(30rem, 100%);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+:global(html[lang='zh-CN']) .heroSubtitle {
+  max-width: 31rem;
 }
 
 [data-theme='dark'] .page {
@@ -651,7 +680,6 @@
 }
 
 [data-theme='dark'] .heroCard,
-[data-theme='dark'] .signalCard,
 [data-theme='dark'] .featureCard,
 [data-theme='dark'] .workflowCard,
 [data-theme='dark'] .metricCard,
@@ -774,6 +802,7 @@
   .hero {
     gap: 1.3rem;
     padding-top: 3.8rem;
+    min-height: auto;
   }
 
   .heroCopy {
@@ -781,11 +810,10 @@
   }
 
   .heroPanel {
-    padding-top: 0;
   }
 
   .heroTitle {
-    max-width: 9ch;
+    max-width: min(26rem, 100%);
     font-size: clamp(2.85rem, 9.5vw, 4.2rem);
   }
 
@@ -815,7 +843,6 @@
 
   .actions {
     flex-direction: column;
-    align-items: stretch;
   }
 
   .installHeader {

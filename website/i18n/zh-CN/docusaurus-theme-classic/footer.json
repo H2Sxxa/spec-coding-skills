@@ -1,0 +1,30 @@
+{
+  "link.title.Docs": {
+    "message": "文档",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Project": {
+    "message": "项目",
+    "description": "The title of the footer links column with title=Project in the footer"
+  },
+  "link.item.label.Overview": {
+    "message": "概览",
+    "description": "The label of footer link with label=Overview linking to /docs/intro"
+  },
+  "link.item.label.Testing": {
+    "message": "测试",
+    "description": "The label of footer link with label=Testing linking to /docs/testing"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/H2Sxxa/spec-coding-skills"
+  },
+  "link.item.label.MIT License": {
+    "message": "MIT 许可证",
+    "description": "The label of footer link with label=MIT License linking to https://github.com/H2Sxxa/spec-coding-skills/blob/main/LICENSE"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 spec-coding-skills.",
+    "description": "The footer copyright"
+  }
+}

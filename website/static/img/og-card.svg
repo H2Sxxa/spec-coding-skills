@@ -1,15 +1,16 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" rx="32" fill="#10120F"/>
-  <rect x="24" y="24" width="1152" height="582" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="630" rx="32" fill="#10120F" />
+  <rect x="24" y="24" width="1152" height="582" rx="28" fill="url(#bg)" />
 
-  <circle cx="1038" cy="118" r="174" fill="#D6A063" fill-opacity="0.10"/>
-  <circle cx="1098" cy="82" r="88" fill="#E7C4A8" fill-opacity="0.16"/>
-  <circle cx="156" cy="116" r="116" fill="#2B6253" fill-opacity="0.16"/>
-  <circle cx="938" cy="520" r="132" fill="#2B6253" fill-opacity="0.10"/>
+  <circle cx="1038" cy="118" r="174" fill="#D6A063" fill-opacity="0.10" />
+  <circle cx="1098" cy="82" r="88" fill="#E7C4A8" fill-opacity="0.16" />
+  <circle cx="156" cy="116" r="116" fill="#2B6253" fill-opacity="0.16" />
+  <circle cx="938" cy="520" r="132" fill="#2B6253" fill-opacity="0.10" />
 
-  <rect x="88" y="82" width="246" height="44" rx="22" fill="#FFFFFF" fill-opacity="0.07"/>
-  <text x="116" y="111" fill="#D6A063" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="1.1">
-    SPEC-DRIVEN SKILLS
+  <rect x="88" y="82" width="210" height="44" rx="22" fill="#FFFFFF" fill-opacity="0.07" />
+  <text x="116" y="111" fill="#D6A063" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700"
+    letter-spacing="1.1">
+    SPEC-DRIVEN
   </text>
 
   <text x="88" y="214" fill="#FFF4E2" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700">
@@ -26,25 +27,28 @@
     Reuse project memory.
   </text>
 
-  <rect x="88" y="434" width="304" height="116" rx="28" fill="#141814" fill-opacity="0.96"/>
-  <rect x="432" y="434" width="304" height="116" rx="28" fill="#141814" fill-opacity="0.96"/>
-  <rect x="776" y="434" width="336" height="116" rx="28" fill="#141814" fill-opacity="0.96"/>
+  <rect x="88" y="434" width="304" height="116" rx="28" fill="#141814" fill-opacity="0.96" />
+  <rect x="432" y="434" width="304" height="116" rx="28" fill="#141814" fill-opacity="0.96" />
+  <rect x="776" y="434" width="336" height="116" rx="28" fill="#141814" fill-opacity="0.96" />
 
-  <text x="120" y="470" fill="#D6A063" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="0.7">
+  <text x="120" y="470" fill="#D6A063" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700"
+    letter-spacing="0.7">
     CORE LOOP
   </text>
   <text x="120" y="520" fill="#FFF4E2" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">
     Self Correction
   </text>
 
-  <text x="464" y="470" fill="#D6A063" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="0.7">
+  <text x="464" y="470" fill="#D6A063" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700"
+    letter-spacing="0.7">
     REPOSITORY CONTROL
   </text>
   <text x="464" y="520" fill="#FFF4E2" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">
     Root SPEC.md
   </text>
 
-  <text x="808" y="470" fill="#D6A063" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="0.7">
+  <text x="808" y="470" fill="#D6A063" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700"
+    letter-spacing="0.7">
     DEMO BENCHMARK
   </text>
   <text x="808" y="520" fill="#FFF4E2" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="700">
@@ -53,8 +57,8 @@
 
   <defs>
     <linearGradient id="bg" x1="84" y1="36" x2="1098" y2="594" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#181B15"/>
-      <stop offset="1" stop-color="#20241C"/>
+      <stop stop-color="#181B15" />
+      <stop offset="1" stop-color="#20241C" />
     </linearGradient>
   </defs>
 </svg>

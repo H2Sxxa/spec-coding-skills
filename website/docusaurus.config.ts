@@ -38,7 +38,13 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh-CN'],
+    localeConfigs: {
+      'zh-CN': {
+        htmlLang: 'zh-CN',
+        label: '简体中文',
+      },
+    },
   },
 
   presets: [
@@ -79,6 +85,7 @@ const config: Config = {
       items: [
         {to: '/docs/intro', label: 'Docs', position: 'left'},
         {to: '/docs/benchmark', label: 'Benchmark', position: 'left'},
+        {type: 'localeDropdown', position: 'right'},
         {
           href: 'https://github.com/H2Sxxa/spec-coding-skills',
           label: 'GitHub',

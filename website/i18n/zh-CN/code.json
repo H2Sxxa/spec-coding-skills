@@ -1,0 +1,641 @@
+{
+  "homepage.signals.coreLoop.label": {
+    "message": "核心闭环",
+    "description": "Homepage signal card label for the core workflow loop"
+  },
+  "homepage.signals.coreLoop.value": {
+    "message": "规划 -> 纠偏 -> 记忆",
+    "description": "Homepage signal card value for the core workflow loop"
+  },
+  "homepage.signals.coreLoop.detail": {
+    "message": "三个技能会彼此增强，而不是像彼此割裂的提示词一样各自工作。",
+    "description": "Homepage signal card detail for the core workflow loop"
+  },
+  "homepage.signals.repositoryControl.label": {
+    "message": "仓库级控制",
+    "description": "Homepage signal card label for repository customization"
+  },
+  "homepage.signals.repositoryControl.value": {
+    "message": "Root SPEC.md",
+    "description": "Homepage signal card value for repository customization"
+  },
+  "homepage.signals.repositoryControl.detail": {
+    "message": "仓库可以通过根目录配置覆盖语言、校验命令和知识库路径，而无需 fork 这些技能。",
+    "description": "Homepage signal card detail for repository customization"
+  },
+  "homepage.signals.demoBenchmark.label": {
+    "message": "演示基准",
+    "description": "Homepage signal card label for the benchmark summary"
+  },
+  "homepage.signals.demoBenchmark.value": {
+    "message": "+88.9 分",
+    "description": "Homepage signal card value for the benchmark summary"
+  },
+  "homepage.signals.demoBenchmark.detail": {
+    "message": "在一个本地 3 提示词的小型演示中，技能引导输出与预期工作流结构的吻合度明显更高。",
+    "description": "Homepage signal card detail for the benchmark summary"
+  },
+  "homepage.hero.points.defineScope.title": {
+    "message": "先定义范围，再动手实现",
+    "description": "Homepage hero bullet title about defining scope"
+  },
+  "homepage.hero.points.defineScope.body": {
+    "message": "把模糊需求整理成可直接实现的规格，明确范围和验收标准。",
+    "description": "Homepage hero bullet body about defining scope"
+  },
+  "homepage.hero.points.correctWithEvidence.title": {
+    "message": "用证据纠偏，不靠猜测",
+    "description": "Homepage hero bullet title about evidence-driven correction"
+  },
+  "homepage.hero.points.correctWithEvidence.body": {
+    "message": "用测试、日志、CI 输出和评审反馈，依据当前规格修复偏差。",
+    "description": "Homepage hero bullet body about evidence-driven correction"
+  },
+  "homepage.hero.points.reuseMemory.title": {
+    "message": "复用项目记忆",
+    "description": "Homepage hero bullet title about project memory"
+  },
+  "homepage.hero.points.reuseMemory.body": {
+    "message": "记录关键决策和根因，让下一个任务从真实上下文开始。",
+    "description": "Homepage hero bullet body about project memory"
+  },
+  "homepage.features.specPlan.title": {
+    "message": "把模糊请求转成可实现的规格",
+    "description": "Homepage feature card title for spec-plan"
+  },
+  "homepage.features.specPlan.body": {
+    "message": "在代码开始漂移之前，先明确范围边界、假设、验收标准、验证步骤、执行护栏和阻塞问题。",
+    "description": "Homepage feature card body for spec-plan"
+  },
+  "homepage.features.specCrlp.title": {
+    "message": "基于证据调试，而不是靠猜",
+    "description": "Homepage feature card title for spec-crlp"
+  },
+  "homepage.features.specCrlp.body": {
+    "message": "结合 lint、测试、日志、CI 输出和评审反馈，围绕当前规格和当前代码运行纠偏闭环。",
+    "description": "Homepage feature card body for spec-crlp"
+  },
+  "homepage.features.specIndex.title": {
+    "message": "构建可检索的项目记忆",
+    "description": "Homepage feature card title for spec-index"
+  },
+  "homepage.features.specIndex.body": {
+    "message": "记录决策、根因、修复模式、风险点和验证规则，让后续任务从上下文出发，而不是从失忆开始。",
+    "description": "Homepage feature card body for spec-index"
+  },
+  "homepage.workflow.readRepository.title": {
+    "message": "先读仓库契约",
+    "description": "Homepage workflow step title for reading repository conventions"
+  },
+  "homepage.workflow.readRepository.body": {
+    "message": "如果目标仓库定义了根目录 SPEC.md，技能就会据此遵循本地语言、验证和知识库约定。",
+    "description": "Homepage workflow step body for reading repository conventions"
+  },
+  "homepage.workflow.retrieveContext.title": {
+    "message": "拉取历史上下文",
+    "description": "Homepage workflow step title for loading project memory"
+  },
+  "homepage.workflow.retrieveContext.body": {
+    "message": "`spec-index` 会在规划或纠偏前先查找相关决策、根因和风险点。",
+    "description": "Homepage workflow step body for loading project memory"
+  },
+  "homepage.workflow.defineDone.title": {
+    "message": "先定义完成标准，再开始实现",
+    "description": "Homepage workflow step title for planning"
+  },
+  "homepage.workflow.defineDone.body": {
+    "message": "`spec-plan` 会把模糊请求整理成可执行的规格，包含可测试的验收标准和执行护栏。",
+    "description": "Homepage workflow step body for planning"
+  },
+  "homepage.workflow.implement.title": {
+    "message": "在常规编码循环中实现",
+    "description": "Homepage workflow step title for implementation"
+  },
+  "homepage.workflow.implement.body": {
+    "message": "这些技能不会替代编码，而是收紧“应该发生什么”以及“如何验证”的约束。",
+    "description": "Homepage workflow step body for implementation"
+  },
+  "homepage.workflow.correct.title": {
+    "message": "用真实反馈纠偏",
+    "description": "Homepage workflow step title for correction"
+  },
+  "homepage.workflow.correct.body": {
+    "message": "当现实与规格出现偏差时，`spec-crlp` 会基于证据执行“修复-验证-重复”的闭环，而不是悄悄移动目标。",
+    "description": "Homepage workflow step body for correction"
+  },
+  "homepage.workflow.persist.title": {
+    "message": "沉淀可复用经验",
+    "description": "Homepage workflow step title for saving project memory"
+  },
+  "homepage.workflow.persist.body": {
+    "message": "可复用发现会回流到 `spec-index`，让后续任务继承项目记忆，而不是重复犯同样的错。",
+    "description": "Homepage workflow step body for saving project memory"
+  },
+  "homepage.docs.overview.title": {
+    "message": "概览",
+    "description": "Homepage docs card title for the overview page"
+  },
+  "homepage.docs.overview.body": {
+    "message": "了解三个技能的职责，以及它们如何组成默认工作流。",
+    "description": "Homepage docs card body for the overview page"
+  },
+  "homepage.docs.testing.title": {
+    "message": "测试",
+    "description": "Homepage docs card title for the testing page"
+  },
+  "homepage.docs.testing.body": {
+    "message": "查看 smoke 测试、本地验证步骤，以及用于验证本项目的小型 eval 流程。",
+    "description": "Homepage docs card body for the testing page"
+  },
+  "homepage.docs.benchmark.title": {
+    "message": "演示基准",
+    "description": "Homepage docs card title for the benchmark page"
+  },
+  "homepage.docs.benchmark.body": {
+    "message": "查看本地 3 提示词基准，以及这些数字能说明和不能说明什么。",
+    "description": "Homepage docs card body for the benchmark page"
+  },
+  "homepage.benchmark.rows.planning.title": {
+    "message": "规划一个已有功能",
+    "description": "Homepage benchmark row title for the planning scenario"
+  },
+  "homepage.benchmark.rows.planning.impact": {
+    "message": "在实现前补齐范围边界、验收标准、验证计划和记忆上下文。",
+    "description": "Homepage benchmark row impact for the planning scenario"
+  },
+  "homepage.benchmark.rows.correction.title": {
+    "message": "修复一个失败测试",
+    "description": "Homepage benchmark row title for the correction scenario"
+  },
+  "homepage.benchmark.rows.correction.impact": {
+    "message": "推动 agent 采用基于证据的调试方式，并显式记录根因、验证和记忆沉淀。",
+    "description": "Homepage benchmark row impact for the correction scenario"
+  },
+  "homepage.benchmark.rows.memory.title": {
+    "message": "保存一个可复用的根因",
+    "description": "Homepage benchmark row title for the memory scenario"
+  },
+  "homepage.benchmark.rows.memory.impact": {
+    "message": "把一次性的调试知识整理成带结构、标签和复用条件的可检索项目记忆。",
+    "description": "Homepage benchmark row impact for the memory scenario"
+  },
+  "homepage.layout.title": {
+    "message": "面向 AI 编码代理的规格驱动技能",
+    "description": "Homepage layout title"
+  },
+  "homepage.layout.description": {
+    "message": "spec-coding-skills 帮助 AI 编码代理基于验收标准进行规划、根据真实反馈纠正实现偏差，并复用持久的项目记忆。",
+    "description": "Homepage layout description"
+  },
+  "homepage.hero.kicker": {
+    "message": "规划。纠偏。记忆。",
+    "description": "Homepage hero kicker text"
+  },
+  "homepage.hero.title": {
+    "message": "给 AI 编码代理一个更紧的规格闭环。",
+    "description": "Homepage hero title"
+  },
+  "homepage.hero.subtitle": {
+    "message": "帮助代理在编码前先定义完成标准，用证据纠正偏差，并复用项目记忆，而不是每个任务都从零开始。",
+    "description": "Homepage hero subtitle after the project name"
+  },
+  "homepage.hero.primaryAction": {
+    "message": "从文档开始",
+    "description": "Homepage primary CTA label"
+  },
+  "homepage.hero.secondaryAction": {
+    "message": "在 GitHub 上查看",
+    "description": "Homepage secondary CTA label"
+  },
+  "homepage.hero.card.label": {
+    "message": "实际会有什么变化",
+    "description": "Homepage hero card label"
+  },
+  "homepage.hero.card.title": {
+    "message": "规划、纠偏和记忆会始终连接在一起，而不是每个任务都临时拼出来。",
+    "description": "Homepage hero card title"
+  },
+  "homepage.install.label": {
+    "message": "准备好时再安装",
+    "description": "Homepage install block label"
+  },
+  "homepage.install.hint": {
+    "message": "一条命令，装好三个技能。",
+    "description": "Homepage install block hint"
+  },
+  "homepage.features.kicker": {
+    "message": "三个技能",
+    "description": "Homepage features section kicker"
+  },
+  "homepage.features.title": {
+    "message": "一个闭环，串起规划、纠偏和持久记忆。",
+    "description": "Homepage features section title"
+  },
+  "homepage.features.body": {
+    "message": "每个技能单独使用都有效，但真正的价值出现在它们能在任务生命周期里把上下文传给彼此的时候。",
+    "description": "Homepage features section body"
+  },
+  "homepage.features.link": {
+    "message": "打开文档",
+    "description": "Homepage features section link label"
+  },
+  "homepage.workflow.kicker": {
+    "message": "默认工作流",
+    "description": "Homepage workflow section kicker"
+  },
+  "homepage.workflow.title": {
+    "message": "这个闭环在真实仓库里如何运作。",
+    "description": "Homepage workflow section title"
+  },
+  "homepage.workflow.body": {
+    "message": "这套流程在日常使用中依然很轻量：读取本地约定，围绕明确完成条件做规划，再在运行证据与预期不一致时补齐差距。",
+    "description": "Homepage workflow section body"
+  },
+  "homepage.benchmark.kicker": {
+    "message": "演示基准",
+    "description": "Homepage benchmark section kicker"
+  },
+  "homepage.benchmark.title": {
+    "message": "一个小信号，说明这套流程确实会改变 agent 的行为。",
+    "description": "Homepage benchmark section title"
+  },
+  "homepage.benchmark.body": {
+    "message": "在一个本地 3 提示词 Codex 演示中，技能引导输出在规划、纠偏和记忆结构上，比基线的通用输出稳定得多。",
+    "description": "Homepage benchmark section body"
+  },
+  "homepage.benchmark.summary.label": {
+    "message": "演示总体结果",
+    "description": "Homepage benchmark summary label"
+  },
+  "homepage.benchmark.metricImpact": {
+    "message": "改进点",
+    "description": "Homepage benchmark row impact label"
+  },
+  "homepage.benchmark.metricLabel.baseline": {
+    "message": "基线",
+    "description": "Homepage benchmark baseline label"
+  },
+  "homepage.benchmark.metricLabel.withSkills": {
+    "message": "使用技能后",
+    "description": "Homepage benchmark with-skills label"
+  },
+  "homepage.benchmark.notes.measures.title": {
+    "message": "它衡量什么",
+    "description": "Homepage benchmark note title for what it measures"
+  },
+  "homepage.benchmark.notes.measures.body": {
+    "message": "这个基准检查 agent 是否产出了能让真实开发更安全的工作流产物：清晰范围、可测试验收标准、结构化纠偏步骤，以及可检索的项目记忆。",
+    "description": "Homepage benchmark note body for what it measures"
+  },
+  "homepage.benchmark.notes.noClaim.title": {
+    "message": "它不宣称什么",
+    "description": "Homepage benchmark note title for what it does not claim"
+  },
+  "homepage.benchmark.notes.noClaim.body": {
+    "message": "这不是对最终代码质量的统计性结论。更适合把它视为流程质量前后对比的紧凑演示，而不是通用基准声明。",
+    "description": "Homepage benchmark note body for what it does not claim"
+  },
+  "homepage.docs.kicker": {
+    "message": "更快上手",
+    "description": "Homepage docs section kicker"
+  },
+  "homepage.docs.title": {
+    "message": "评估或采用这个项目所需的内容都在这里。",
+    "description": "Homepage docs section title"
+  },
+  "homepage.docs.body": {
+    "message": "先看概览，验证本地工作流，再检查这个紧凑基准，然后再把这些技能接入真实仓库。",
+    "description": "Homepage docs section body"
+  },
+  "homepage.docs.link": {
+    "message": "阅读内容",
+    "description": "Homepage docs section link label"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "页面已崩溃。",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "回到顶部",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "历史博文",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "历史博文",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "博文列表分页导航",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "较新的博文",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "较旧的博文",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "博文分页导航",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "较新一篇",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "较旧一篇",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "查看所有标签",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "浅色模式",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "暗黑模式",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "切换浅色/暗黑模式（当前为{mode}）",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "页面路径",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "文件选项卡",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "上一页",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "下一页",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "{count} 篇文档带有标签",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged}「{tagName}」",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "版本：{versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "此为 {siteTitle} {versionLabel} 版尚未发行的文档。",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "此为 {siteTitle} {versionLabel} 版的文档，现已不再积极维护。",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "最新的文档请参阅 {latestVersionLink} ({versionLabel})。",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "最新版本",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "编辑此页",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading}的直接链接",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": "于 {date} ",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": "由 {user} ",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "最后{byUser}{atDate}更新",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.NotFound.title": {
+    "message": "找不到页面",
+    "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "选择版本",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "标签：",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.admonition.caution": {
+    "message": "警告",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "危险",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "信息",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "备注",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "提示",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "注意",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "最近博文导航",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "展开侧边栏分类 '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "折叠侧边栏分类 '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "主导航",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "我们找不到您要找的页面。",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "请联系原始链接来源网站的所有者，并告知他们链接已损坏。",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "本页总览",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "阅读更多",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "阅读 {title} 的全文",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "阅读需 {readingTime} 分钟",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "复制",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "复制成功",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "复制代码到剪贴板",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "切换自动换行",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "主页面",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "选择语言",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "收起侧边栏",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "收起侧边栏",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "文档侧边栏",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "关闭导航栏",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← 回到主菜单",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "切换导航栏",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "展开侧边栏",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "展开侧边栏",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.blog.post.plurals": {
+    "message": "{count} 篇博文",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} 含有标签「{tagName}」",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "作者",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "查看所有作者",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "该作者尚未撰写任何文章。",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "未列出页",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "此页面未列出。搜索引擎不会对其索引，只有拥有直接链接的用户才能访问。",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "草稿页",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "此页面是草稿，仅在开发环境中可见，不会包含在正式版本中。",
+    "description": "The draft content banner message"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} 个项目",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "重试",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "跳到主要内容",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "标签",
+    "description": "The title of the tag list page"
+  }
+}
