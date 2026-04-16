@@ -8,7 +8,7 @@
     "description": "Homepage signal card value for the core workflow loop"
   },
   "homepage.signals.coreLoop.detail": {
-    "message": "三个技能会彼此增强，而不是像彼此割裂的提示词一样各自工作。",
+    "message": "三个技能会彼此增强，而不是像彼此割裂的提示词那样各自运作。",
     "description": "Homepage signal card detail for the core workflow loop"
   },
   "homepage.signals.repositoryControl.label": {
@@ -20,7 +20,7 @@
     "description": "Homepage signal card value for repository customization"
   },
   "homepage.signals.repositoryControl.detail": {
-    "message": "仓库可以通过根目录配置覆盖语言、校验命令和知识库路径，而无需 fork 这些技能。",
+    "message": "仓库无需 fork 技能，就能通过根目录配置覆盖语言、验证命令和知识库路径。",
     "description": "Homepage signal card detail for repository customization"
   },
   "homepage.signals.demoBenchmark.label": {
@@ -32,23 +32,23 @@
     "description": "Homepage signal card value for the benchmark summary"
   },
   "homepage.signals.demoBenchmark.detail": {
-    "message": "在一个本地 3 提示词的小型演示中，技能引导输出与预期工作流结构的吻合度明显更高。",
+    "message": "在一个本地 3 轮提示的小型演示中，技能引导输出与预期工作流结构的匹配度明显更高。",
     "description": "Homepage signal card detail for the benchmark summary"
   },
   "homepage.hero.points.defineScope.title": {
-    "message": "先定义范围，再动手实现",
+    "message": "先界定范围，再开始实现",
     "description": "Homepage hero bullet title about defining scope"
   },
   "homepage.hero.points.defineScope.body": {
-    "message": "把模糊需求整理成可直接实现的规格，明确范围和验收标准。",
+    "message": "把模糊需求整理成可直接落地的规格，明确范围和验收标准。",
     "description": "Homepage hero bullet body about defining scope"
   },
   "homepage.hero.points.correctWithEvidence.title": {
-    "message": "用证据纠偏，不靠猜测",
+    "message": "基于证据纠偏，不靠猜测",
     "description": "Homepage hero bullet title about evidence-driven correction"
   },
   "homepage.hero.points.correctWithEvidence.body": {
-    "message": "用测试、日志、CI 输出和评审反馈，依据当前规格修复偏差。",
+    "message": "借助测试、日志、CI 输出和评审反馈，按照当前规格修正偏差。",
     "description": "Homepage hero bullet body about evidence-driven correction"
   },
   "homepage.hero.points.reuseMemory.title": {
@@ -56,15 +56,15 @@
     "description": "Homepage hero bullet title about project memory"
   },
   "homepage.hero.points.reuseMemory.body": {
-    "message": "记录关键决策和根因，让下一个任务从真实上下文开始。",
+    "message": "沉淀关键决策和根因，让下一个任务从真实上下文出发。",
     "description": "Homepage hero bullet body about project memory"
   },
   "homepage.features.specPlan.title": {
-    "message": "把模糊请求转成可实现的规格",
+    "message": "把模糊请求整理成可执行的规格",
     "description": "Homepage feature card title for spec-plan"
   },
   "homepage.features.specPlan.body": {
-    "message": "在代码开始漂移之前，先明确范围边界、假设、验收标准、验证步骤、执行护栏和阻塞问题。",
+    "message": "在实现开始漂移之前，先明确范围边界、假设、验收标准、验证步骤、执行护栏和阻塞问题。",
     "description": "Homepage feature card body for spec-plan"
   },
   "homepage.features.specCrlp.title": {
@@ -72,7 +72,7 @@
     "description": "Homepage feature card title for spec-crlp"
   },
   "homepage.features.specCrlp.body": {
-    "message": "结合 lint、测试、日志、CI 输出和评审反馈，围绕当前规格和当前代码运行纠偏闭环。",
+    "message": "结合 lint、测试、日志、CI 输出和评审反馈，围绕当前规格与当前代码运行纠偏闭环。",
     "description": "Homepage feature card body for spec-crlp"
   },
   "homepage.features.specIndex.title": {
@@ -80,11 +80,11 @@
     "description": "Homepage feature card title for spec-index"
   },
   "homepage.features.specIndex.body": {
-    "message": "记录决策、根因、修复模式、风险点和验证规则，让后续任务从上下文出发，而不是从失忆开始。",
+    "message": "沉淀决策、根因、修复模式、风险点和验证规则，让后续任务从上下文出发，而不是从零摸索。",
     "description": "Homepage feature card body for spec-index"
   },
   "homepage.workflow.readRepository.title": {
-    "message": "先读仓库契约",
+    "message": "先读仓库约定",
     "description": "Homepage workflow step title for reading repository conventions"
   },
   "homepage.workflow.readRepository.body": {
@@ -92,11 +92,11 @@
     "description": "Homepage workflow step body for reading repository conventions"
   },
   "homepage.workflow.retrieveContext.title": {
-    "message": "拉取历史上下文",
+    "message": "取回历史上下文",
     "description": "Homepage workflow step title for loading project memory"
   },
   "homepage.workflow.retrieveContext.body": {
-    "message": "`spec-index` 会在规划或纠偏前先查找相关决策、根因和风险点。",
+    "message": "在规划或纠偏开始前，`spec-index` 会先查找相关决策、根因和风险点。",
     "description": "Homepage workflow step body for loading project memory"
   },
   "homepage.workflow.defineDone.title": {
@@ -104,7 +104,7 @@
     "description": "Homepage workflow step title for planning"
   },
   "homepage.workflow.defineDone.body": {
-    "message": "`spec-plan` 会把模糊请求整理成可执行的规格，包含可测试的验收标准和执行护栏。",
+    "message": "`spec-plan` 会把模糊请求整理成可执行规格，包含可测试的验收标准和执行护栏。",
     "description": "Homepage workflow step body for planning"
   },
   "homepage.workflow.implement.title": {
@@ -112,15 +112,15 @@
     "description": "Homepage workflow step title for implementation"
   },
   "homepage.workflow.implement.body": {
-    "message": "这些技能不会替代编码，而是收紧“应该发生什么”以及“如何验证”的约束。",
+    "message": "这些技能不会取代编码，而是收紧“应该做什么”和“如何验证”的边界。",
     "description": "Homepage workflow step body for implementation"
   },
   "homepage.workflow.correct.title": {
-    "message": "用真实反馈纠偏",
+    "message": "用真实反馈闭环纠偏",
     "description": "Homepage workflow step title for correction"
   },
   "homepage.workflow.correct.body": {
-    "message": "当现实与规格出现偏差时，`spec-crlp` 会基于证据执行“修复-验证-重复”的闭环，而不是悄悄移动目标。",
+    "message": "当现实与规格出现偏差时，`spec-crlp` 会基于证据执行“修复-验证-重复”的闭环，而不是悄悄改变目标。",
     "description": "Homepage workflow step body for correction"
   },
   "homepage.workflow.persist.title": {
@@ -128,7 +128,7 @@
     "description": "Homepage workflow step title for saving project memory"
   },
   "homepage.workflow.persist.body": {
-    "message": "可复用发现会回流到 `spec-index`，让后续任务继承项目记忆，而不是重复犯同样的错。",
+    "message": "可复用的发现会回流到 `spec-index`，让后续任务继承项目记忆，而不是重复踩坑。",
     "description": "Homepage workflow step body for saving project memory"
   },
   "homepage.docs.overview.title": {
@@ -144,7 +144,7 @@
     "description": "Homepage docs card title for the testing page"
   },
   "homepage.docs.testing.body": {
-    "message": "查看 smoke 测试、本地验证步骤，以及用于验证本项目的小型 eval 流程。",
+    "message": "查看 smoke 测试、本地验证步骤，以及用于验证这个项目的小型 eval 流程。",
     "description": "Homepage docs card body for the testing page"
   },
   "homepage.docs.benchmark.title": {
@@ -152,7 +152,7 @@
     "description": "Homepage docs card title for the benchmark page"
   },
   "homepage.docs.benchmark.body": {
-    "message": "查看本地 3 提示词基准，以及这些数字能说明和不能说明什么。",
+    "message": "查看本地 3 轮提示基准，以及这些数字能说明和不能说明什么。",
     "description": "Homepage docs card body for the benchmark page"
   },
   "homepage.benchmark.rows.planning.title": {
@@ -168,7 +168,7 @@
     "description": "Homepage benchmark row title for the correction scenario"
   },
   "homepage.benchmark.rows.correction.impact": {
-    "message": "推动 agent 采用基于证据的调试方式，并显式记录根因、验证和记忆沉淀。",
+    "message": "推动 agent 采用基于证据的调试方式，并显式记录根因、验证过程和记忆沉淀。",
     "description": "Homepage benchmark row impact for the correction scenario"
   },
   "homepage.benchmark.rows.memory.title": {
@@ -184,19 +184,19 @@
     "description": "Homepage layout title"
   },
   "homepage.layout.description": {
-    "message": "spec-coding-skills 帮助 AI 编码代理基于验收标准进行规划、根据真实反馈纠正实现偏差，并复用持久的项目记忆。",
+    "message": "spec-coding-skills 帮助 AI 编码代理围绕验收标准做规划、依据真实反馈纠正实现偏差，并复用持久的项目记忆。",
     "description": "Homepage layout description"
   },
   "homepage.hero.kicker": {
-    "message": "规划。纠偏。记忆。",
+    "message": "规划。纠偏。沉淀。",
     "description": "Homepage hero kicker text"
   },
   "homepage.hero.title": {
-    "message": "给 AI 编码代理一个更紧的规格闭环。",
+    "message": "给 AI 编码代理一套更紧的规格闭环。",
     "description": "Homepage hero title"
   },
   "homepage.hero.subtitle": {
-    "message": "帮助代理在编码前先定义完成标准，用证据纠正偏差，并复用项目记忆，而不是每个任务都从零开始。",
+    "message": "帮助代理在编码前先定义完成标准，用证据修正偏差，并复用项目记忆，而不是每个任务都从零开始。",
     "description": "Homepage hero subtitle after the project name"
   },
   "homepage.hero.primaryAction": {
@@ -208,19 +208,19 @@
     "description": "Homepage secondary CTA label"
   },
   "homepage.hero.card.label": {
-    "message": "实际会有什么变化",
+    "message": "落到实践会怎样",
     "description": "Homepage hero card label"
   },
   "homepage.hero.card.title": {
-    "message": "规划、纠偏和记忆会始终连接在一起，而不是每个任务都临时拼出来。",
+    "message": "规划、纠偏和记忆会始终连成一体，而不是在每个任务里临时拼凑。",
     "description": "Homepage hero card title"
   },
   "homepage.install.label": {
-    "message": "准备好时再安装",
+    "message": "准备好后再安装",
     "description": "Homepage install block label"
   },
   "homepage.install.hint": {
-    "message": "一条命令，装好三个技能。",
+    "message": "一条命令，装齐三个技能。",
     "description": "Homepage install block hint"
   },
   "homepage.features.kicker": {
@@ -228,11 +228,11 @@
     "description": "Homepage features section kicker"
   },
   "homepage.features.title": {
-    "message": "一个闭环，串起规划、纠偏和持久记忆。",
+    "message": "一个闭环，串起规划、纠偏与持久记忆。",
     "description": "Homepage features section title"
   },
   "homepage.features.body": {
-    "message": "每个技能单独使用都有效，但真正的价值出现在它们能在任务生命周期里把上下文传给彼此的时候。",
+    "message": "每个技能单独使用都有效，但真正的价值在于它们能在任务生命周期中彼此传递上下文。",
     "description": "Homepage features section body"
   },
   "homepage.features.link": {
@@ -244,11 +244,11 @@
     "description": "Homepage workflow section kicker"
   },
   "homepage.workflow.title": {
-    "message": "这个闭环在真实仓库里如何运作。",
+    "message": "这套闭环在真实仓库里如何运作。",
     "description": "Homepage workflow section title"
   },
   "homepage.workflow.body": {
-    "message": "这套流程在日常使用中依然很轻量：读取本地约定，围绕明确完成条件做规划，再在运行证据与预期不一致时补齐差距。",
+    "message": "这套流程在日常使用中依然很轻量：先读取本地约定，再围绕明确的完成条件做规划，并在运行证据与预期不一致时补齐差距。",
     "description": "Homepage workflow section body"
   },
   "homepage.benchmark.kicker": {
@@ -256,11 +256,11 @@
     "description": "Homepage benchmark section kicker"
   },
   "homepage.benchmark.title": {
-    "message": "一个小信号，说明这套流程确实会改变 agent 的行为。",
+    "message": "一个小信号，说明这套流程确实会改变 agent 的行为方式。",
     "description": "Homepage benchmark section title"
   },
   "homepage.benchmark.body": {
-    "message": "在一个本地 3 提示词 Codex 演示中，技能引导输出在规划、纠偏和记忆结构上，比基线的通用输出稳定得多。",
+    "message": "在一个本地 3 轮提示的 Codex 演示中，技能引导输出在规划、纠偏和记忆结构上，比通用基线输出稳定得多。",
     "description": "Homepage benchmark section body"
   },
   "homepage.benchmark.summary.label": {
@@ -284,7 +284,7 @@
     "description": "Homepage benchmark note title for what it measures"
   },
   "homepage.benchmark.notes.measures.body": {
-    "message": "这个基准检查 agent 是否产出了能让真实开发更安全的工作流产物：清晰范围、可测试验收标准、结构化纠偏步骤，以及可检索的项目记忆。",
+    "message": "这个基准检查 agent 是否产出了能让真实开发更稳妥的工作流产物：清晰的范围、可测试的验收标准、结构化的纠偏步骤，以及可检索的项目记忆。",
     "description": "Homepage benchmark note body for what it measures"
   },
   "homepage.benchmark.notes.noClaim.title": {
@@ -292,7 +292,7 @@
     "description": "Homepage benchmark note title for what it does not claim"
   },
   "homepage.benchmark.notes.noClaim.body": {
-    "message": "这不是对最终代码质量的统计性结论。更适合把它视为流程质量前后对比的紧凑演示，而不是通用基准声明。",
+    "message": "这并不是对最终代码质量的统计性结论。更适合把它看作流程质量前后对比的紧凑演示，而不是通用基准声明。",
     "description": "Homepage benchmark note body for what it does not claim"
   },
   "homepage.docs.kicker": {
@@ -300,11 +300,11 @@
     "description": "Homepage docs section kicker"
   },
   "homepage.docs.title": {
-    "message": "评估或采用这个项目所需的内容都在这里。",
+    "message": "评估或采用这个项目所需的一切都在这里。",
     "description": "Homepage docs section title"
   },
   "homepage.docs.body": {
-    "message": "先看概览，验证本地工作流，再检查这个紧凑基准，然后再把这些技能接入真实仓库。",
+    "message": "先看概览，验证本地工作流，再检查这个紧凑的基准，然后再把这些技能接入真实仓库。",
     "description": "Homepage docs section body"
   },
   "homepage.docs.link": {
