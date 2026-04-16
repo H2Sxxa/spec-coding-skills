@@ -8,6 +8,11 @@
   color: #1e201b;
 }
 
+.page h3 {
+  font-family: var(--ifm-font-family-base);
+  letter-spacing: -0.02em;
+}
+
 .page::before {
   content: '';
   position: absolute;
@@ -17,7 +22,7 @@
     linear-gradient(rgba(30, 32, 27, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(30, 32, 27, 0.025) 1px, transparent 1px);
   background-size: 2.75rem 2.75rem;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 85%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 85%);
 }
 
 .hero,
@@ -35,16 +40,20 @@
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.95fr);
-  gap: 2rem;
-  padding-top: 4.25rem;
-  padding-bottom: 2.25rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  align-items: center;
+  gap: clamp(1.6rem, 3vw, 2.6rem);
+  padding-top: 4.5rem;
+  padding-bottom: 2rem;
 }
 
 .heroCopy {
+  max-width: 36rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.1rem;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .kicker {
@@ -64,24 +73,28 @@
 
 .heroTitle {
   margin: 0;
-  font-size: clamp(3rem, 6vw, 5.2rem);
-  line-height: 0.94;
-  letter-spacing: -0.045em;
-  max-width: 11ch;
+  max-width: 9.5ch;
+  color: #18211e;
+  font-family: var(--ifm-font-family-base);
+  font-size: clamp(3.15rem, 5.6vw, 5rem);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
 }
 
 .heroSubtitle {
-  max-width: 42rem;
+  max-width: 33rem;
   margin: 0;
   color: #464d44;
-  font-size: 1.08rem;
-  line-height: 1.8;
+  font-size: 1.04rem;
+  line-height: 1.68;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
+  margin-top: 0.3rem;
 }
 
 .primaryButton {
@@ -110,7 +123,22 @@
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
-  margin-top: 0.35rem;
+  width: 100%;
+  margin-top: 0;
+  padding: 0.95rem 1rem 1rem;
+  border: 1px solid rgba(31, 44, 41, 0.09);
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 18px 40px rgba(29, 23, 14, 0.06);
+  align-items: stretch;
+}
+
+.installHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .installLabel {
@@ -121,30 +149,31 @@
   text-transform: uppercase;
 }
 
-.installCode {
-  margin: 0;
-  border-radius: 1.1rem;
-  background: #131714;
-  color: #f7f1e5;
-  overflow-x: auto;
+.installHint {
+  color: #5b6158;
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .installCode {
-  padding: 1rem 1.1rem;
-  box-shadow: 0 26px 54px rgba(18, 24, 21, 0.16);
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(19, 23, 20, 0.08);
+  background: #141917;
+  color: #f7f1e5;
+  overflow-x: auto;
+  box-shadow: none;
+  font-size: 0.94rem;
 }
 
 .heroPanel {
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  padding-top: 0;
 }
 
-.heroStack {
-  display: grid;
-  width: 100%;
-}
-
-.miniCard,
+.heroCard,
 .signalCard,
 .featureCard,
 .workflowCard,
@@ -153,50 +182,100 @@
 .docCard {
   border: 1px solid rgba(31, 44, 41, 0.09);
   border-radius: 1.4rem;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 24px 60px rgba(29, 23, 14, 0.07);
   backdrop-filter: blur(12px);
 }
 
-.miniCard {
-  padding: 1.35rem;
+.heroCard {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  width: 100%;
+  padding: 1.25rem;
+  background:
+    radial-gradient(circle at top right, rgba(111, 75, 34, 0.12), transparent 12rem),
+    rgba(255, 255, 255, 0.82);
 }
 
-.miniLabel {
-  display: inline-block;
-  margin-bottom: 0.8rem;
-  color: #6f4b22;
-  font-size: 0.8rem;
+.heroCardLabel {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.38rem 0.78rem;
+  border-radius: 999px;
+  background: rgba(31, 44, 41, 0.08);
+  color: #2b6253;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
-.miniTitle {
-  margin: 0 0 0.8rem;
-  font-size: 1.65rem;
-  line-height: 1.08;
+.heroCardTitle {
+  margin: 0;
+  color: #1d2422;
+  font-family: var(--ifm-heading-font-family);
+  font-size: clamp(1.45rem, 2.2vw, 1.9rem);
+  line-height: 1.18;
 }
 
-.miniCard p {
+.heroPointList {
+  display: grid;
+  gap: 0.75rem;
   margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.heroPoint {
+  display: grid;
+  gap: 0.22rem;
+  padding: 0.85rem 0 0;
+  border-top: 1px solid rgba(31, 44, 41, 0.08);
+}
+
+.heroPointTitle {
+  color: #1f2c29;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.heroPointBody {
+  display: block;
   color: #464d44;
-  line-height: 1.7;
+  font-size: 0.94rem;
+  line-height: 1.55;
 }
 
 .signalSection {
-  padding-top: 0.5rem;
-  padding-bottom: 1.75rem;
+  padding-top: 0.4rem;
+  padding-bottom: 3rem;
+}
+
+.proofRow {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.9fr) minmax(0, 1.1fr);
+  gap: 1rem;
+  align-items: stretch;
 }
 
 .signalGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.9rem;
 }
 
 .signalCard {
-  padding: 1.25rem;
+  padding: 1rem;
+  border: 1px solid rgba(31, 44, 41, 0.09);
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: none;
+  backdrop-filter: blur(8px);
+  text-align: left;
 }
 
 .signalLabel {
@@ -212,8 +291,8 @@
 .signalValue {
   margin: 0 0 0.7rem;
   color: #18211e;
-  font-size: 1.45rem;
-  line-height: 1.1;
+  font-size: 1.25rem;
+  line-height: 1.15;
   font-weight: 700;
 }
 
@@ -228,7 +307,7 @@
 .benchmarkSection,
 .docsSection {
   padding-top: 1rem;
-  padding-bottom: 4rem;
+  padding-bottom: 4.4rem;
 }
 
 .sectionHeader {
@@ -249,12 +328,19 @@
 .featureGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.1rem;
 }
 
 .featureCard,
 .docCard {
   padding: 1.35rem;
+}
+
+.featureCard {
+  border-top: 3px solid rgba(111, 75, 34, 0.24);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.72)),
+    rgba(255, 255, 255, 0.8);
 }
 
 .featureEyebrow {
@@ -296,14 +382,27 @@
   text-decoration: none;
 }
 
+.workflowSection {
+  padding: 2rem 1.75rem 2.2rem;
+  border: 1px solid rgba(31, 44, 41, 0.09);
+  border-radius: 2rem;
+  background:
+    linear-gradient(180deg, rgba(31, 44, 41, 0.06), rgba(255, 255, 255, 0.36)),
+    rgba(255, 255, 255, 0.32);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
 .workflowGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .workflowCard {
-  padding: 1.3rem;
+  padding: 1.3rem 1.3rem 1.3rem 1.45rem;
+  border-left: 3px solid rgba(111, 75, 34, 0.28);
+  background: rgba(255, 255, 255, 0.64);
+  box-shadow: none;
 }
 
 .workflowLabel {
@@ -323,11 +422,14 @@
 .benchmarkLayout {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .metricCard {
-  padding: 1.25rem;
+  padding: 1.35rem;
+  border-color: rgba(19, 23, 20, 0.12);
+  background: linear-gradient(180deg, #1b2523 0%, #243330 100%);
+  box-shadow: 0 28px 60px rgba(18, 24, 21, 0.18);
 }
 
 .metricSummary {
@@ -337,13 +439,13 @@
   gap: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid rgba(31, 44, 41, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .metricSummaryLabel {
   display: inline-block;
   margin-bottom: 0.35rem;
-  color: #6f4b22;
+  color: #d8b184;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -352,7 +454,7 @@
 
 .metricSummaryValue {
   margin: 0;
-  color: #18211e;
+  color: #fff4e2;
   font-size: 2rem;
   line-height: 1.02;
   font-weight: 700;
@@ -364,8 +466,8 @@
   justify-content: center;
   padding: 0.55rem 0.9rem;
   border-radius: 999px;
-  background: rgba(43, 98, 83, 0.12);
-  color: #2b6253;
+  background: rgba(214, 160, 99, 0.18);
+  color: #f7d5ac;
   font-weight: 700;
 }
 
@@ -376,9 +478,9 @@
 
 .metricRow {
   padding: 1rem;
-  border: 1px solid rgba(31, 44, 41, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .metricRowTop {
@@ -392,14 +494,15 @@
 .metricRowTitle {
   margin: 0;
   font-size: 1.2rem;
+  color: #fff4e2;
 }
 
 .metricImpact {
   display: inline-flex;
   padding: 0.32rem 0.7rem;
   border-radius: 999px;
-  background: rgba(31, 44, 41, 0.08);
-  color: #1f2c29;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f1e8db;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -416,13 +519,13 @@
 .metricValueCard {
   padding: 0.9rem;
   border-radius: 0.95rem;
-  background: rgba(19, 23, 20, 0.04);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .metricLabel {
   display: inline-block;
   margin-bottom: 0.35rem;
-  color: #6f4b22;
+  color: #d8b184;
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -431,7 +534,7 @@
 
 .metricValue {
   margin: 0;
-  color: #18211e;
+  color: #fff4e2;
   font-size: 1.45rem;
   line-height: 1.05;
   font-weight: 700;
@@ -439,7 +542,7 @@
 
 .metricImpactBody {
   margin: 0;
-  color: #464d44;
+  color: #d4ccbf;
   line-height: 1.68;
 }
 
@@ -450,12 +553,19 @@
 
 .noteCard {
   padding: 1.25rem;
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.58);
 }
 
 .docGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.1rem;
+}
+
+.docCard {
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.56);
 }
 
 [data-theme='dark'] .page {
@@ -479,8 +589,23 @@
   box-shadow: none;
 }
 
+[data-theme='dark'] .installBlock {
+  border-color: rgba(242, 234, 220, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: none;
+}
+
+[data-theme='dark'] .installHint {
+  color: #c7c0b4;
+}
+
+[data-theme='dark'] .installCode {
+  border-color: rgba(242, 234, 220, 0.08);
+  background: #121612;
+}
+
 [data-theme='dark'] .heroSubtitle,
-[data-theme='dark'] .miniCard p,
+[data-theme='dark'] .heroPointBody,
 [data-theme='dark'] .signalDetail,
 [data-theme='dark'] .sectionHeader p,
 [data-theme='dark'] .featureCard p,
@@ -516,7 +641,7 @@
 }
 
 [data-theme='dark'] .installLabel,
-[data-theme='dark'] .miniLabel,
+[data-theme='dark'] .heroCardLabel,
 [data-theme='dark'] .signalLabel,
 [data-theme='dark'] .featureEyebrow,
 [data-theme='dark'] .workflowLabel,
@@ -525,7 +650,7 @@
   color: #d6a063;
 }
 
-[data-theme='dark'] .miniCard,
+[data-theme='dark'] .heroCard,
 [data-theme='dark'] .signalCard,
 [data-theme='dark'] .featureCard,
 [data-theme='dark'] .workflowCard,
@@ -537,12 +662,63 @@
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
 }
 
+[data-theme='dark'] .heroCard {
+  background:
+    radial-gradient(circle at top right, rgba(214, 160, 99, 0.12), transparent 12rem),
+    rgba(24, 27, 21, 0.82);
+}
+
+[data-theme='dark'] .heroCardLabel {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme='dark'] .heroCardTitle {
+  color: #fff4e2;
+}
+
+[data-theme='dark'] .heroTitle {
+  color: #fff4e2;
+}
+
+[data-theme='dark'] .heroPoint {
+  border-top-color: rgba(242, 234, 220, 0.08);
+}
+
+[data-theme='dark'] .signalCard {
+  border-color: rgba(242, 234, 220, 0.08);
+  background: rgba(24, 27, 21, 0.42);
+  box-shadow: none;
+  backdrop-filter: blur(8px);
+}
+
+[data-theme='dark'] .featureCard {
+  border-top-color: rgba(214, 160, 99, 0.28);
+  background:
+    linear-gradient(180deg, rgba(28, 31, 24, 0.88), rgba(24, 27, 21, 0.78)),
+    rgba(24, 27, 21, 0.78);
+}
+
+[data-theme='dark'] .workflowSection {
+  border-color: rgba(242, 234, 220, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.08)),
+    rgba(24, 27, 21, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+[data-theme='dark'] .workflowCard {
+  border-left-color: rgba(214, 160, 99, 0.28);
+  background: rgba(24, 27, 21, 0.72);
+  box-shadow: none;
+}
+
 [data-theme='dark'] .metricSummary {
   border-bottom-color: rgba(242, 234, 220, 0.08);
 }
 
 [data-theme='dark'] .metricSummaryValue,
-[data-theme='dark'] .metricValue {
+[data-theme='dark'] .metricValue,
+[data-theme='dark'] .signalValue {
   color: #fff4e2;
 }
 
@@ -569,8 +745,10 @@
   color: #d4ccbf;
 }
 
-[data-theme='dark'] .signalValue {
-  color: #fff4e2;
+[data-theme='dark'] .noteCard,
+[data-theme='dark'] .docCard {
+  box-shadow: none;
+  background: rgba(24, 27, 21, 0.58);
 }
 
 [data-theme='dark'] .inlineLink {
@@ -587,21 +765,33 @@
 
 @media (max-width: 996px) {
   .hero,
-  .signalGrid,
   .featureGrid,
-  .workflowGrid,
   .benchmarkLayout,
   .docGrid {
     grid-template-columns: 1fr;
   }
 
   .hero {
-    padding-top: 3.75rem;
+    gap: 1.3rem;
+    padding-top: 3.8rem;
+  }
+
+  .heroCopy {
+    max-width: none;
+  }
+
+  .heroPanel {
+    padding-top: 0;
   }
 
   .heroTitle {
-    max-width: none;
-    font-size: clamp(2.6rem, 10vw, 4rem);
+    max-width: 9ch;
+    font-size: clamp(2.85rem, 9.5vw, 4.2rem);
+  }
+
+  .proofRow,
+  .signalGrid {
+    grid-template-columns: 1fr;
   }
 
   .metricCompare {
@@ -613,16 +803,25 @@
   .hero,
   .signalSection,
   .featureSection,
-  .workflowSection,
   .benchmarkSection,
   .docsSection {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
+  .workflowSection {
+    padding: 1.5rem 1rem 1.65rem;
+  }
+
   .actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .installHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
   }
 
   .primaryButton,

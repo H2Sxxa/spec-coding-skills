@@ -37,24 +37,47 @@ type BenchmarkRow = {
   readonly impact: string;
 };
 
+type HeroPoint = {
+  readonly title: string;
+  readonly body: string;
+};
+
 const signals: ReadonlyArray<Signal> = [
   {
     label: 'Core loop',
     value: 'Plan -> Correct -> Remember',
     detail:
-      'The three skills are designed to reinforce one another instead of acting like disconnected prompts.',
+      'Three skills that reinforce one another instead of acting like disconnected prompts.',
   },
   {
     label: 'Repository control',
     value: 'Root SPEC.md',
     detail:
-      'Each target repository can override language, validation commands, and knowledge-base paths without forking the skills.',
+      'Repositories can override language, validation commands, and knowledge-base paths without forking the skills.',
   },
   {
     label: 'Demo benchmark',
     value: '+88.9 pts',
     detail:
-      'In a small 3-prompt local demo, skill-guided outputs matched the expected workflow structure far more consistently than baseline output.',
+      'In a small 3-prompt local demo, skill-guided outputs matched the expected workflow structure far more consistently.',
+  },
+];
+
+const heroPoints: ReadonlyArray<HeroPoint> = [
+  {
+    title: 'Define scope before implementation',
+    body:
+      'Turn fuzzy requests into implementation-ready specs with clear scope and acceptance criteria.',
+  },
+  {
+    title: 'Correct with evidence, not guesswork',
+    body:
+      'Use tests, logs, CI output, and review feedback to fix drift against the current spec.',
+  },
+  {
+    title: 'Reuse project memory',
+    body:
+      'Capture decisions and root causes so the next task starts with real context.',
   },
 ];
 
@@ -174,14 +197,13 @@ export default function Home(): JSX.Element {
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
-            <span className={styles.kicker}>Spec-driven skills for AI coding agents</span>
+            <span className={styles.kicker}>Plan. Correct. Remember.</span>
             <Heading as="h1" className={styles.heroTitle}>
-              Spec-driven skills for AI coding agents
+              Give AI coding agents a tighter spec loop.
             </Heading>
             <p className={styles.heroSubtitle}>
-              <strong>spec-coding-skills</strong> helps agents plan with acceptance criteria,
-              correct implementation drift with evidence, and keep reusable project memory close
-              at hand.
+              <strong>spec-coding-skills</strong> helps agents define done before coding, correct
+              drift with evidence, and reuse project memory instead of starting each task cold.
             </p>
             <div className={styles.actions}>
               <Link
@@ -195,39 +217,48 @@ export default function Home(): JSX.Element {
                 View on GitHub
               </Link>
             </div>
-            <div className={styles.installBlock}>
-              <span className={styles.installLabel}>Install from GitHub</span>
-              <pre className={styles.installCode}>
-                <code>npx skills add H2Sxxa/spec-coding-skills --all</code>
-              </pre>
-            </div>
           </div>
 
           <div className={styles.heroPanel}>
-            <div className={styles.heroStack}>
-              <article className={styles.miniCard}>
-                <span className={styles.miniLabel}>What changes</span>
-                <Heading as="h2" className={styles.miniTitle}>
-                  Less improvisation. More contracts, evidence, and memory.
-                </Heading>
-                <p>
-                  The goal is not to make agents verbose. It is to make them more reliable when
-                  work gets ambiguous, risky, or iterative.
-                </p>
-              </article>
-            </div>
+            <article className={styles.heroCard}>
+              <span className={styles.heroCardLabel}>What changes in practice</span>
+              <p className={styles.heroCardTitle}>
+                Planning, correction, and memory stay connected instead of getting improvised task
+                by task.
+              </p>
+              <ul className={styles.heroPointList}>
+                {heroPoints.map((point) => (
+                  <li key={point.title} className={styles.heroPoint}>
+                    <span className={styles.heroPointTitle}>{point.title}</span>
+                    <span className={styles.heroPointBody}>{point.body}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
           </div>
         </section>
 
         <section className={styles.signalSection}>
-          <div className={styles.signalGrid}>
-            {signals.map((signal) => (
-              <article key={signal.label} className={styles.signalCard}>
-                <span className={styles.signalLabel}>{signal.label}</span>
-                <p className={styles.signalValue}>{signal.value}</p>
-                <p className={styles.signalDetail}>{signal.detail}</p>
-              </article>
-            ))}
+          <div className={styles.proofRow}>
+            <div className={styles.installBlock}>
+              <div className={styles.installHeader}>
+                <span className={styles.installLabel}>Install when you are ready</span>
+                <span className={styles.installHint}>One command, all three skills.</span>
+              </div>
+              <pre className={styles.installCode}>
+                <code>npx skills add H2Sxxa/spec-coding-skills --all</code>
+              </pre>
+            </div>
+
+            <div className={styles.signalGrid}>
+              {signals.map((signal) => (
+                <article key={signal.label} className={styles.signalCard}>
+                  <span className={styles.signalLabel}>{signal.label}</span>
+                  <p className={styles.signalValue}>{signal.value}</p>
+                  <p className={styles.signalDetail}>{signal.detail}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -258,6 +289,10 @@ export default function Home(): JSX.Element {
           <div className={styles.sectionHeader}>
             <span className={styles.kicker}>Default workflow</span>
             <Heading as="h2">How the loop behaves in a real repository.</Heading>
+            <p>
+              The flow stays lightweight in day-to-day use: read local conventions, plan against
+              explicit done conditions, and close the gap when runtime evidence disagrees.
+            </p>
           </div>
           <div className={styles.workflowGrid}>
             {workflow.map((step) => (
@@ -339,6 +374,10 @@ export default function Home(): JSX.Element {
           <div className={styles.sectionHeader}>
             <span className={styles.kicker}>Learn faster</span>
             <Heading as="h2">Everything you need to evaluate or adopt the project.</Heading>
+            <p>
+              Start with the overview, verify the local workflow, then inspect the compact benchmark
+              before rolling the skills into a real repository.
+            </p>
           </div>
           <div className={styles.docGrid}>
             {docs.map((doc) => (
