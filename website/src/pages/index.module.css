@@ -37,8 +37,8 @@
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.95fr);
   gap: 2rem;
-  padding-top: 5rem;
-  padding-bottom: 2.75rem;
+  padding-top: 4.25rem;
+  padding-bottom: 2.25rem;
 }
 
 .heroCopy {
@@ -136,12 +136,11 @@
 
 .heroPanel {
   display: flex;
-  align-items: stretch;
+  align-items: center;
 }
 
 .heroStack {
   display: grid;
-  gap: 1rem;
   width: 100%;
 }
 
@@ -182,87 +181,6 @@
 .miniCard p {
   margin: 0;
   color: #464d44;
-  line-height: 1.7;
-}
-
-.specCard {
-  border: 1px solid rgba(31, 44, 41, 0.09);
-  border-radius: 1.4rem;
-  padding: 1.2rem;
-  background:
-    radial-gradient(circle at top right, rgba(111, 75, 34, 0.1), transparent 12rem),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(247, 241, 229, 0.96) 100%);
-  box-shadow: 0 30px 70px rgba(18, 24, 21, 0.14);
-}
-
-.specHeader {
-  margin-bottom: 1rem;
-}
-
-.specEyebrow {
-  display: inline-flex;
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  background: rgba(31, 44, 41, 0.08);
-  color: #2b6253;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.specTitle {
-  margin: 0.9rem 0 0.65rem;
-  font-size: 1.45rem;
-  line-height: 1.12;
-}
-
-.specSubtitle {
-  margin: 0;
-  color: #464d44;
-  line-height: 1.72;
-}
-
-.specGrid {
-  display: grid;
-  gap: 0.85rem;
-}
-
-.specBlock {
-  padding: 1rem;
-  border: 1px solid rgba(31, 44, 41, 0.08);
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.74);
-}
-
-.specLabel {
-  display: inline-block;
-  margin-bottom: 0.45rem;
-  color: #6f4b22;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.specValue {
-  margin: 0;
-  color: #18211e;
-  font-size: 1.02rem;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
-.specMeta {
-  margin: 0.5rem 0 0;
-  color: #464d44;
-  line-height: 1.68;
-}
-
-.specList {
-  margin: 0;
-  padding-left: 1.1rem;
-  color: #18211e;
   line-height: 1.7;
 }
 
@@ -617,38 +535,6 @@
   border-color: rgba(242, 234, 220, 0.08);
   background: rgba(24, 27, 21, 0.78);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
-}
-
-[data-theme='dark'] .specCard {
-  border-color: rgba(242, 234, 220, 0.08);
-  background:
-    radial-gradient(circle at top right, rgba(214, 160, 99, 0.12), transparent 12rem),
-    linear-gradient(180deg, rgba(24, 27, 21, 0.96) 0%, rgba(19, 21, 17, 0.98) 100%);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.24);
-}
-
-[data-theme='dark'] .specEyebrow {
-  background: rgba(255, 255, 255, 0.06);
-  color: #d6a063;
-}
-
-[data-theme='dark'] .specSubtitle,
-[data-theme='dark'] .specMeta {
-  color: #d4ccbf;
-}
-
-[data-theme='dark'] .specBlock {
-  border-color: rgba(242, 234, 220, 0.08);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-[data-theme='dark'] .specLabel {
-  color: #d6a063;
-}
-
-[data-theme='dark'] .specValue,
-[data-theme='dark'] .specList {
-  color: #fff4e2;
 }
 
 [data-theme='dark'] .metricSummary {

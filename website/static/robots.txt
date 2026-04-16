@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://h2sxxa.github.io/spec-coding-skills/sitemap.xml

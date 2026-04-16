@@ -1,9 +1,10 @@
 ---
 sidebar_position: 1
-title: Overview
+title: spec-coding-skills overview
+description: Overview of spec-plan, spec-crlp, and spec-index for spec-driven AI coding workflows.
 ---
 
-# spec-coding-skills
+# spec-coding-skills overview
 
 `spec-coding-skills` is a small skill suite for making agentic coding work more repeatable.
 

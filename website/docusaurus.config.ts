@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'spec-coding-skills',
   tagline:
-    'Plan with acceptance criteria, correct from feedback, and remember reusable project knowledge.',
+    'Spec-driven skills for AI coding agents that plan with acceptance criteria, correct from feedback, and reuse project memory.',
   favicon: 'img/logo.svg',
 
   url: 'https://h2sxxa.github.io',
@@ -14,6 +14,22 @@ const config: Config = {
   projectName: 'spec-coding-skills',
 
   onBrokenLinks: 'throw',
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'spec-coding-skills',
+        url: 'https://h2sxxa.github.io/spec-coding-skills/',
+        description:
+          'Spec-driven skills for AI coding agents that plan with acceptance criteria, correct from feedback, and reuse project memory.',
+      }),
+    },
+  ],
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
@@ -42,7 +58,18 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/logo.svg',
+    image: 'img/og-card.svg',
+    metadata: [
+      {
+        name: 'keywords',
+        content:
+          'ai agent skills, ai coding agents, codex skills, spec driven development, acceptance criteria, bdd, debugging workflow, project memory',
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+    ],
     navbar: {
       title: 'spec-coding-skills',
       logo: {

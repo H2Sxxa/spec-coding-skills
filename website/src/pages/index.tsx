@@ -169,19 +169,19 @@ const benchmarkRows: ReadonlyArray<BenchmarkRow> = [
 export default function Home(): JSX.Element {
   return (
     <Layout
-      title="spec-coding-skills"
-      description="Plan with acceptance criteria, correct from feedback, and remember reusable project knowledge.">
+      title="Spec-driven skills for AI coding agents"
+      description="spec-coding-skills helps AI coding agents plan with acceptance criteria, correct implementation drift from real feedback, and reuse durable project memory.">
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
             <span className={styles.kicker}>Spec-driven skills for AI coding agents</span>
             <Heading as="h1" className={styles.heroTitle}>
-              Give agents a tighter loop than “just write some code.”
+              Spec-driven skills for AI coding agents
             </Heading>
             <p className={styles.heroSubtitle}>
-              <strong>spec-coding-skills</strong> helps agents define the work before
-              implementation, correct implementation drift with evidence, and keep reusable
-              project memory close at hand.
+              <strong>spec-coding-skills</strong> helps agents plan with acceptance criteria,
+              correct implementation drift with evidence, and keep reusable project memory close
+              at hand.
             </p>
             <div className={styles.actions}>
               <Link
@@ -214,53 +214,6 @@ export default function Home(): JSX.Element {
                   The goal is not to make agents verbose. It is to make them more reliable when
                   work gets ambiguous, risky, or iterative.
                 </p>
-              </article>
-
-              <article className={styles.specCard}>
-                <div className={styles.specHeader}>
-                  <span className={styles.specEyebrow}>Repository override</span>
-                  <Heading as="h2" className={styles.specTitle}>
-                    Root <code>SPEC.md</code> can tune the skills without forking them.
-                  </Heading>
-                  <p className={styles.specSubtitle}>
-                    Instead of exposing raw Markdown, this preview shows the three settings most
-                    teams tend to care about first.
-                  </p>
-                </div>
-
-                <div className={styles.specGrid}>
-                  <section className={styles.specBlock}>
-                    <span className={styles.specLabel}>Documentation language</span>
-                    <p className={styles.specValue}>Simplified Chinese</p>
-                    <p className={styles.specMeta}>
-                      User-facing specs, plans, and memory entries can follow the repository
-                      preference by default.
-                    </p>
-                  </section>
-
-                  <section className={styles.specBlock}>
-                    <span className={styles.specLabel}>Validation</span>
-                    <ul className={styles.specList}>
-                      <li>
-                        <code>pnpm lint</code>
-                      </li>
-                      <li>
-                        <code>pnpm test</code>
-                      </li>
-                    </ul>
-                  </section>
-
-                  <section className={styles.specBlock}>
-                    <span className={styles.specLabel}>Knowledge base root</span>
-                    <p className={styles.specValue}>
-                      <code>docs/knowledge-base/</code>
-                    </p>
-                    <p className={styles.specMeta}>
-                      Keep durable project memory in a predictable place while still allowing local
-                      overrides.
-                    </p>
-                  </section>
-                </div>
               </article>
             </div>
           </div>

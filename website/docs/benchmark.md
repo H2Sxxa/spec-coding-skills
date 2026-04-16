@@ -1,9 +1,10 @@
 ---
 sidebar_position: 3
-title: Demo Benchmark
+title: spec-coding-skills demo benchmark
+description: A small benchmark showing how spec-coding-skills changes planning, correction, and memory outputs.
 ---
 
-# Demo Benchmark
+# spec-coding-skills demo benchmark
 
 This project includes a small 3-prompt demo benchmark comparing:
 

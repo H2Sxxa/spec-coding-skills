@@ -1,9 +1,10 @@
 ---
 sidebar_position: 2
-title: Testing
+title: Testing spec-coding-skills
+description: How to test spec-coding-skills with discovery checks, smoke tests, and small skill evals.
 ---
 
-# Testing
+# Testing spec-coding-skills
 
 The repository includes a lightweight testing workflow for skill discovery, script smoke tests, and skill behavior evals.
 
