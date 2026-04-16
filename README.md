@@ -43,9 +43,9 @@ npx skills add . --all
 
 ### `spec-plan`
 
-Turns ambiguous software requests into BDD-style implementation specs with scope, constraints, acceptance criteria, edge cases, validation steps, and an execution plan.
+Turns ambiguous software requests into BDD-style implementation-ready specs with scope, constraints, assumptions, acceptance criteria, edge cases, validation steps, execution guardrails, and an implementation plan.
 
-Use it when requirements are fuzzy, the user asks for a plan or spec, or implementation would be risky without first making "done" explicit.
+Use it when requirements are fuzzy, the user asks for a plan or spec, or implementation would be risky without first making "done" explicit. For complex work, it applies a self-check before implementation handoff so unresolved blocking questions do not turn into execution-time guessing.
 
 ### `spec-crlp`
 
@@ -114,7 +114,7 @@ docs/knowledge-base/
 Bundled resources:
 
 - [template.md](./skills/spec-index/references/template.md) defines the canonical memory entry format.
-- [index.py](./skills/spec-index/scripts/index.py) provides deterministic `add`, `search`, and `rebuild` operations.
+- [index.py](./skills/spec-index/scripts/index.py) provides deterministic `add`, best-match `search`, `audit`, and `rebuild` operations.
 
 The helper script uses the Python standard library only and does not require network access.
 

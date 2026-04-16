@@ -43,9 +43,9 @@ npx skills add . --all
 
 ### `spec-plan`
 
-把模糊的软件需求转成 BDD 风格的实现 spec，包括范围、约束、验收标准、边界情况、验证步骤和执行计划。
+把模糊的软件需求转成 BDD 风格、可进入实现的规格说明，包括范围、约束、假设、验收标准、边界情况、验证步骤、执行护栏和实现计划。
 
-适合在需求还不清晰、用户要求 plan/spec，或者直接写代码风险较高时使用。
+适合在需求还不清晰、用户要求 plan/spec，或者直接写代码风险较高时使用。对于复杂任务，它会在交给实现前做 self-check，避免未解决的阻塞问题变成执行阶段的猜测。
 
 ### `spec-crlp`
 
@@ -114,7 +114,7 @@ docs/knowledge-base/
 内置资源：
 
 - [template.md](./skills/spec-index/references/template.md) 定义 memory entry 的标准格式。
-- [index.py](./skills/spec-index/scripts/index.py) 提供确定性的 `add`、`search`、`rebuild` 操作。
+- [index.py](./skills/spec-index/scripts/index.py) 提供确定性的 `add`、best-match `search`、`audit`、`rebuild` 操作。
 
 这个 helper script 只使用 Python 标准库，不需要网络访问。
 

@@ -79,10 +79,28 @@ python skills/spec-index/scripts/index.py --root test-workspaces/smoke-kb add \
 Search the temporary knowledge base:
 
 ```bash
-python skills/spec-index/scripts/index.py --root test-workspaces/smoke-kb search "nextjs middleware 404"
+python skills/spec-index/scripts/index.py --root test-workspaces/smoke-kb search "nextjs middleware 404" --explain
 ```
 
-Expected result: the temporary entry should appear with a positive score.
+Expected result: the temporary entry should appear with a positive score and match reasons.
+
+Try an alias-style query to verify best-match behavior:
+
+```bash
+python skills/spec-index/scripts/index.py --root test-workspaces/smoke-kb search "not found middleware" --explain
+```
+
+Expected result: the `symptom:404` entry should still be discoverable through alias expansion and token overlap.
+
+The `add` command automatically inserts `type:<category>` into `trigger_tags` when it is missing, so audit should not fail only because the caller forgot that base tag.
+
+Audit the temporary knowledge base:
+
+```bash
+python skills/spec-index/scripts/index.py --root test-workspaces/smoke-kb audit
+```
+
+Expected result: the command should print a Markdown-style audit report with entry counts and any structural issues.
 
 ## Skill Behavior Evals
 
@@ -135,5 +153,6 @@ When sharing benchmark results, describe them as a small demo unless there are m
 
 - `npx skills add H2Sxxa/spec-coding-skills --list` shows only `spec-plan`, `spec-crlp`, and `spec-index`.
 - `python skills/spec-index/scripts/index.py --help` succeeds.
+- `python skills/spec-index/scripts/index.py --root test-workspaces/smoke-kb audit` prints a knowledge-base audit report.
 - README install commands point to the current GitHub repository.
 - `.agents/skills/`, `.claude/skills/`, and `skills-lock.json` are ignored and not tracked.

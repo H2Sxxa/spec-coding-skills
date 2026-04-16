@@ -1,6 +1,6 @@
 ---
 name: spec-plan
-description: Turn ambiguous software requests into BDD-style implementation specs with clear scope, constraints, acceptance criteria, failure cases, validation steps, and an execution plan. Use this whenever the user is defining requirements, asking for a plan or spec, wants boundaries clarified before coding, mentions acceptance criteria or BDD, or when coding would be risky without first making done explicit.
+description: Turn ambiguous software requests into BDD-style implementation-ready specs with clear scope, constraints, assumptions, acceptance criteria, validation steps, execution guardrails, and an implementation plan. Use this whenever the user is defining requirements, asking for a plan or spec, wants boundaries clarified before coding, mentions acceptance criteria or BDD, or when coding would be risky without first making done explicit.
 ---
 
 # Spec Planning
@@ -8,6 +8,15 @@ description: Turn ambiguous software requests into BDD-style implementation spec
 Use this skill when the task is still fuzzy and the agent should define success before implementation begins.
 
 This skill turns a request into a practical spec. The goal is not project-management theater. The goal is to make coding safer and faster by clarifying scope, constraints, edge cases, validation, and what counts as done.
+
+## Bundled resources
+
+- `references/self-check.md` defines the self-check checklist, ambiguity handling, blocking-question rules, execution guardrails, and change-control policy.
+- `references/output-template.md` defines the preferred implementation-ready spec output shape for persisted task specs and complex conversation plans.
+
+Read `references/self-check.md` before finalizing a persisted task spec, handing a plan to implementation, or when ambiguity could lead to execution-time guessing.
+
+Use `references/output-template.md` when writing a persisted task spec or a complex plan that needs stable structure.
 
 ## Repository preference override
 
@@ -33,14 +42,17 @@ When no repository root `SPEC.md` is available, use these defaults:
 - task spec location: `docs/specs/<slug>.md`
 - task execution mode: keep the plan in conversation for small, well-bounded tasks; persist it for complex, risky, or multi-turn work
 - context retrieval: query `spec-index` for relevant decisions, constraints, setup notes, pitfalls, and validation rules before planning non-trivial work
+- self-check: apply `references/self-check.md` before implementation handoff
 
 ## Core responsibilities
 
 - Convert the user's request into a concrete problem statement.
 - Separate in-scope work from out-of-scope work.
 - Make assumptions and constraints visible.
+- Classify ambiguity as assumptions, open questions, or blocking questions.
 - Define acceptance criteria in observable, testable terms.
 - Identify edge cases, dependencies, and setup prerequisites.
+- Add execution guardrails so implementation does not silently change scope, behavior, validation, or acceptance criteria.
 - Produce an execution plan that can guide implementation work.
 
 ## Output mode
@@ -55,6 +67,8 @@ Default persisted path: `docs/specs/<slug>.md`, unless the repository root `SPEC
 When persisting a task spec, create or update the file and then continue into implementation only if the user asked for execution or the task clearly implies execution. If the user only asked for planning, stop after producing the spec.
 
 When using conversation plan mode, state that the plan is not being persisted and then proceed directly if the user asked for implementation.
+
+Before handing either mode to implementation, apply `references/self-check.md`. If the self-check finds unresolved blocking questions, stop before implementation and ask for the needed decision.
 
 ## Context retrieval before planning
 
@@ -89,11 +103,12 @@ Skip retrieval for small, self-contained tasks where no durable project context 
 3. Retrieve relevant memory through `spec-index` when the task is existing-project, non-trivial, risky, or likely to span turns.
 4. Extract known constraints from the conversation, the repository, repository preferences, and relevant memory.
 5. Identify what is in scope and what is not.
-6. Surface missing assumptions or dependencies that could change the solution.
+6. Classify ambiguity into assumptions, open questions, and blocking questions.
 7. Translate the request into acceptance criteria that can later be validated.
 8. Call out failure modes, edge cases, setup requirements, and validation rules from the repository root `SPEC.md` when present, otherwise from the built-in defaults.
 9. Break the work into a practical execution sequence.
-10. Note open questions only when they are genuinely decision-shaping.
+10. Apply `references/self-check.md` before finalizing the plan or handing it to implementation.
+11. Note open questions only when they are genuinely decision-shaping.
 
 ## Preferred spec structure
 
@@ -108,11 +123,13 @@ Prefer this shape unless the user asks for a different format:
 ## Out Of Scope
 ## Constraints
 ## Assumptions
+## Blocking Questions
 ## Acceptance Criteria
 ## Edge Cases
 ## Validation Plan
 ## Execution Plan
 ## Open Questions
+## Self-Check
 ```
 
 ## Acceptance criteria guidance
@@ -146,6 +163,7 @@ Keep non-behavioral acceptance criteria as plain Markdown bullets. Do not force 
 - Make setup prerequisites explicit when they could block execution.
 - Reuse the repository root `SPEC.md` when present, otherwise apply the built-in defaults instead of redefining conventions per task.
 - Persist the task spec when future correction work will need a stable reference.
+- Use the self-check reference to remove execution-time guessing before implementation begins.
 - Name the files, systems, or components likely to be affected when that is already knowable.
 - Keep the plan implementation-oriented rather than managerial.
 - Make reasonable assumptions when the risk is low, and label them clearly.
@@ -156,6 +174,8 @@ Keep non-behavioral acceptance criteria as plain Markdown bullets. Do not force 
 - Writing acceptance criteria that cannot be tested or observed.
 - Smuggling implementation details into the spec when the user only needs requirements.
 - Creating a long list of questions when a few explicit assumptions would keep momentum.
+- Handing a plan to implementation while blocking questions remain unresolved.
+- Letting implementation silently change scope, behavior, validation, or acceptance criteria.
 
 ## Handoffs
 

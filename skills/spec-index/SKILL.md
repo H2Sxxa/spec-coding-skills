@@ -12,9 +12,9 @@ This skill is about memory with reuse value, not generic note taking. Capture de
 ## Bundled resources
 
 - `references/template.md` defines the canonical Markdown entry shape, YAML frontmatter, category field, and trigger tag fields.
-- `scripts/index.py` provides deterministic `add`, `search`, and `rebuild` commands for Markdown knowledge bases.
+- `scripts/index.py` provides deterministic `add`, best-match `search`, `audit`, and `rebuild` commands for Markdown knowledge bases.
 
-Prefer the script for creating, searching, and rebuilding the index when the local environment can run Python. If the script cannot run, follow the same template manually and explain why the deterministic helper was not used.
+Prefer the script for creating, searching, auditing, and rebuilding the index when the local environment can run Python. If the script cannot run, follow the same template manually and explain why the deterministic helper was not used.
 
 ## Repository preference override
 
@@ -118,13 +118,15 @@ Prefer lowercase, hyphenated tags. Keep them specific enough to retrieve the ent
 6. Return concise takeaways, why they matter, and what action they suggest.
 7. If nothing relevant is found, say so plainly instead of pretending there is memory that does not exist.
 
+Use `scripts/index.py search --explain` when the reason for a match matters. The search helper uses weighted best-match scoring across trigger tags, titles, frontmatter fields, summaries, `Applies When`, root-cause sections, resolutions, and validation text. Treat search results as candidates to inspect, not as proof.
+
 ## Capture workflow
 
 1. Decide whether the new information is likely to help with future work.
 2. Choose exactly one primary category.
 3. Generate trigger tags from phase, domain, component, tool, framework, symptom, error, file, and environment signals.
 4. Normalize the content using `references/template.md`.
-5. Use `scripts/index.py add` when Python is available so the entry and index are updated deterministically.
+5. Use `scripts/index.py add` when Python is available so the entry and index are updated deterministically. The helper automatically adds the `type:<category>` trigger tag if it is missing.
 6. Preserve the context that explains when the entry applies.
 7. Include the evidence, resolution, or decision rationale.
 8. Avoid creating a second entry when an update to an existing one would be cleaner.
@@ -139,8 +141,9 @@ Use this workflow when maintaining an existing knowledge base:
 4. Group findings by action: keep, update, merge, split, archive, or needs human review.
 5. Prefer safe updates first: add missing trigger tags, fix category metadata, improve summaries, fill `Applies When`, and add validation context.
 6. Ask before destructive changes such as deleting entries, overwriting substantial content, or merging entries where information could be lost.
-7. After manual edits, run `scripts/index.py rebuild` when Python is available.
-8. Produce an investigation report summarizing what changed, what was left untouched, and what still needs review.
+7. Run `scripts/index.py audit` when Python is available to get a deterministic structural report.
+8. After manual edits, run `scripts/index.py rebuild` when Python is available.
+9. Produce an investigation report summarizing what changed, what was left untouched, and what still needs review.
 
 ## Investigation checks
 

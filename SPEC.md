@@ -41,6 +41,9 @@ If a repository `SPEC.md` is partial, use the values it defines and fall back to
 - Use Markdown for the overall task spec.
 - Use Gherkin only for behavior-oriented acceptance criteria or regression scenarios where `Given / When / Then` improves clarity.
 - Do not force Gherkin onto setup notes, implementation steps, decisions, or generic planning prose.
+- Apply `spec-plan` self-check before implementation handoff.
+- Treat unresolved blocking questions as a stop condition before implementation.
+- Implementation may choose internal details, but must not silently change scope, user-visible behavior, permissions, data model, acceptance criteria, or validation plan.
 
 ## Default Validation Behavior
 
@@ -56,6 +59,7 @@ If a repository `SPEC.md` is partial, use the values it defines and fall back to
 - Default knowledge base index: `docs/knowledge-base/index.md`
 - Default entry format: Markdown with YAML frontmatter, one primary category, and retrieval-oriented trigger tags.
 - Default indexing helper: use the `spec-index` bundled `scripts/index.py` when available.
+- Default search behavior: weighted best-match search with alias expansion and optional match explanations.
 - Save durable knowledge as concise Markdown entries linked from the index.
 - Capture only validated, reusable knowledge.
 - Support three memory modes: retrieve existing knowledge, capture new knowledge, and investigate or maintain existing knowledge.
