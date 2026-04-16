@@ -1,5 +1,6 @@
 .agents/skills/
 .claude/skills/
+.codex/
 skills-lock.json
 __pycache__/
 *.pyc

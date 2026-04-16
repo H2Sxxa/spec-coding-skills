@@ -5,6 +5,7 @@ import Heading from '@theme/Heading';
 import Layout from '@theme/Layout';
 
 import styles from './index.module.css';
+import { JSX } from 'react';
 
 type Signal = {
   readonly label: string;
