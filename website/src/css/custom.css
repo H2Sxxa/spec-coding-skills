@@ -27,6 +27,7 @@
   --ifm-color-primary-lightest: #e7c4a8;
   --ifm-background-color: #191812;
   --ifm-navbar-background-color: rgba(25, 24, 18, 0.82);
+  --ifm-navbar-link-color: #f1e8db;
   --ifm-heading-color: #f7f3ec;
   --ifm-font-color-base: #ded8cf;
 }
@@ -66,6 +67,18 @@ pre {
 
 [data-theme='dark'] .navbar {
   border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='dark'] .navbar__title,
+[data-theme='dark'] .navbar__brand,
+[data-theme='dark'] .navbar__link,
+[data-theme='dark'] .navbar-sidebar__brand {
+  color: #f1e8db;
+}
+
+[data-theme='dark'] .navbar__brand:hover,
+[data-theme='dark'] .navbar__link:hover {
+  color: #fff8ee;
 }
 
 [data-theme='dark'] .footer {
