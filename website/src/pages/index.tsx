@@ -30,6 +30,13 @@ type DocCard = {
   readonly to: string;
 };
 
+type BenchmarkRow = {
+  readonly title: string;
+  readonly baseline: string;
+  readonly withSkills: string;
+  readonly impact: string;
+};
+
 const signals: ReadonlyArray<Signal> = [
   {
     label: 'Core loop',
@@ -135,11 +142,28 @@ const docs: ReadonlyArray<DocCard> = [
   },
 ];
 
-const benchmarkRows: ReadonlyArray<readonly [string, string, string]> = [
-  ['Planning an existing feature', '33.3%', '100.0%'],
-  ['Correcting a failing test', '0.0%', '100.0%'],
-  ['Saving a reusable root cause', '0.0%', '100.0%'],
-  ['Overall mean', '11.1%', '100.0%'],
+const benchmarkRows: ReadonlyArray<BenchmarkRow> = [
+  {
+    title: 'Planning an existing feature',
+    baseline: '33.3%',
+    withSkills: '100.0%',
+    impact:
+      'Adds scope boundaries, acceptance criteria, validation planning, and memory context before implementation starts.',
+  },
+  {
+    title: 'Correcting a failing test',
+    baseline: '0.0%',
+    withSkills: '100.0%',
+    impact:
+      'Pushes the agent toward evidence-driven debugging with explicit root cause, validation, and memory capture.',
+  },
+  {
+    title: 'Saving a reusable root cause',
+    baseline: '0.0%',
+    withSkills: '100.0%',
+    impact:
+      'Turns one-off debugging knowledge into searchable project memory with structure, tags, and reuse conditions.',
+  },
 ];
 
 export default function Home(): JSX.Element {
@@ -192,22 +216,51 @@ export default function Home(): JSX.Element {
                 </p>
               </article>
 
-              <article className={styles.terminalCard}>
-                <div className={styles.terminalHeader}>
-                  <span>repository/SPEC.md</span>
-                  <span>override example</span>
+              <article className={styles.specCard}>
+                <div className={styles.specHeader}>
+                  <span className={styles.specEyebrow}>Repository override</span>
+                  <Heading as="h2" className={styles.specTitle}>
+                    Root <code>SPEC.md</code> can tune the skills without forking them.
+                  </Heading>
+                  <p className={styles.specSubtitle}>
+                    Instead of exposing raw Markdown, this preview shows the three settings most
+                    teams tend to care about first.
+                  </p>
                 </div>
-                <pre className={styles.terminalBody}>
-                  <code>{`## Documentation Language
-- Default documentation language: Simplified Chinese.
 
-## Validation
-- Lint command: \`pnpm lint\`
-- Test command: \`pnpm test\`
+                <div className={styles.specGrid}>
+                  <section className={styles.specBlock}>
+                    <span className={styles.specLabel}>Documentation language</span>
+                    <p className={styles.specValue}>Simplified Chinese</p>
+                    <p className={styles.specMeta}>
+                      User-facing specs, plans, and memory entries can follow the repository
+                      preference by default.
+                    </p>
+                  </section>
 
-## Paths
-- Knowledge base root: \`docs/knowledge-base/\``}</code>
-                </pre>
+                  <section className={styles.specBlock}>
+                    <span className={styles.specLabel}>Validation</span>
+                    <ul className={styles.specList}>
+                      <li>
+                        <code>pnpm lint</code>
+                      </li>
+                      <li>
+                        <code>pnpm test</code>
+                      </li>
+                    </ul>
+                  </section>
+
+                  <section className={styles.specBlock}>
+                    <span className={styles.specLabel}>Knowledge base root</span>
+                    <p className={styles.specValue}>
+                      <code>docs/knowledge-base/</code>
+                    </p>
+                    <p className={styles.specMeta}>
+                      Keep durable project memory in a predictable place while still allowing local
+                      overrides.
+                    </p>
+                  </section>
+                </div>
               </article>
             </div>
           </div>
@@ -276,24 +329,37 @@ export default function Home(): JSX.Element {
 
           <div className={styles.benchmarkLayout}>
             <div className={styles.metricCard}>
-              <table className={styles.metricTable}>
-                <thead>
-                  <tr>
-                    <th>Eval</th>
-                    <th>Baseline</th>
-                    <th>With skills</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {benchmarkRows.map(([name, baseline, withSkills]) => (
-                    <tr key={name}>
-                      <td>{name}</td>
-                      <td>{baseline}</td>
-                      <td>{withSkills}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <div className={styles.metricSummary}>
+                <div>
+                  <span className={styles.metricSummaryLabel}>Overall demo result</span>
+                  <p className={styles.metricSummaryValue}>11.1% → 100.0%</p>
+                </div>
+                <span className={styles.metricSummaryDelta}>+88.9 pts</span>
+              </div>
+
+              <div className={styles.metricStack}>
+                {benchmarkRows.map((row) => (
+                  <article key={row.title} className={styles.metricRow}>
+                    <div className={styles.metricRowTop}>
+                      <Heading as="h3" className={styles.metricRowTitle}>
+                        {row.title}
+                      </Heading>
+                      <span className={styles.metricImpact}>What improved</span>
+                    </div>
+                    <div className={styles.metricCompare}>
+                      <div className={styles.metricValueCard}>
+                        <span className={styles.metricLabel}>Baseline</span>
+                        <p className={styles.metricValue}>{row.baseline}</p>
+                      </div>
+                      <div className={styles.metricValueCard}>
+                        <span className={styles.metricLabel}>With skills</span>
+                        <p className={styles.metricValue}>{row.withSkills}</p>
+                      </div>
+                    </div>
+                    <p className={styles.metricImpactBody}>{row.impact}</p>
+                  </article>
+                ))}
+              </div>
             </div>
 
             <div className={styles.benchmarkNotes}>

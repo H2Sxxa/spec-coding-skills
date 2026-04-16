@@ -121,8 +121,7 @@
   text-transform: uppercase;
 }
 
-.installCode,
-.terminalBody {
+.installCode {
   margin: 0;
   border-radius: 1.1rem;
   background: #131714;
@@ -186,26 +185,85 @@
   line-height: 1.7;
 }
 
-.terminalCard {
+.specCard {
+  border: 1px solid rgba(31, 44, 41, 0.09);
   border-radius: 1.4rem;
-  overflow: hidden;
-  box-shadow: 0 30px 70px rgba(18, 24, 21, 0.22);
+  padding: 1.2rem;
+  background:
+    radial-gradient(circle at top right, rgba(111, 75, 34, 0.1), transparent 12rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(247, 241, 229, 0.96) 100%);
+  box-shadow: 0 30px 70px rgba(18, 24, 21, 0.14);
 }
 
-.terminalHeader {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.85rem 1.1rem;
-  background: linear-gradient(90deg, #1d2623 0%, #243530 100%);
-  color: #d6d9d2;
-  font-size: 0.83rem;
-  letter-spacing: 0.03em;
+.specHeader {
+  margin-bottom: 1rem;
 }
 
-.terminalBody {
-  padding: 1.15rem;
-  line-height: 1.75;
+.specEyebrow {
+  display: inline-flex;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(31, 44, 41, 0.08);
+  color: #2b6253;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.specTitle {
+  margin: 0.9rem 0 0.65rem;
+  font-size: 1.45rem;
+  line-height: 1.12;
+}
+
+.specSubtitle {
+  margin: 0;
+  color: #464d44;
+  line-height: 1.72;
+}
+
+.specGrid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.specBlock {
+  padding: 1rem;
+  border: 1px solid rgba(31, 44, 41, 0.08);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.specLabel {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  color: #6f4b22;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.specValue {
+  margin: 0;
+  color: #18211e;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.specMeta {
+  margin: 0.5rem 0 0;
+  color: #464d44;
+  line-height: 1.68;
+}
+
+.specList {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #18211e;
+  line-height: 1.7;
 }
 
 .signalSection {
@@ -354,24 +412,117 @@
   padding: 1.25rem;
 }
 
-.metricTable {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.metricTable th,
-.metricTable td {
-  padding: 0.9rem 0.8rem;
+.metricSummary {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   border-bottom: 1px solid rgba(31, 44, 41, 0.08);
-  text-align: left;
 }
 
-.metricTable th {
+.metricSummaryLabel {
+  display: inline-block;
+  margin-bottom: 0.35rem;
   color: #6f4b22;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+.metricSummaryValue {
+  margin: 0;
+  color: #18211e;
+  font-size: 2rem;
+  line-height: 1.02;
+  font-weight: 700;
+}
+
+.metricSummaryDelta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(43, 98, 83, 0.12);
+  color: #2b6253;
+  font-weight: 700;
+}
+
+.metricStack {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.metricRow {
+  padding: 1rem;
+  border: 1px solid rgba(31, 44, 41, 0.08);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.metricRowTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.metricRowTitle {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.metricImpact {
+  display: inline-flex;
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(31, 44, 41, 0.08);
+  color: #1f2c29;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.metricCompare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.metricValueCard {
+  padding: 0.9rem;
+  border-radius: 0.95rem;
+  background: rgba(19, 23, 20, 0.04);
+}
+
+.metricLabel {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  color: #6f4b22;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.metricValue {
+  margin: 0;
+  color: #18211e;
+  font-size: 1.45rem;
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.metricImpactBody {
+  margin: 0;
+  color: #464d44;
+  line-height: 1.68;
 }
 
 .benchmarkNotes {
@@ -387,6 +538,165 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+}
+
+[data-theme='dark'] .page {
+  background:
+    radial-gradient(circle at 15% 15%, rgba(214, 160, 99, 0.16), transparent 26rem),
+    radial-gradient(circle at 90% 8%, rgba(73, 128, 113, 0.14), transparent 24rem),
+    linear-gradient(180deg, #11130f 0%, #171913 48%, #1c1e18 100%);
+  color: #f2eadc;
+}
+
+[data-theme='dark'] .page::before {
+  background-image:
+    linear-gradient(rgba(242, 234, 220, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 234, 220, 0.035) 1px, transparent 1px);
+}
+
+[data-theme='dark'] .kicker {
+  border-color: rgba(242, 234, 220, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: #d6a063;
+  box-shadow: none;
+}
+
+[data-theme='dark'] .heroSubtitle,
+[data-theme='dark'] .miniCard p,
+[data-theme='dark'] .signalDetail,
+[data-theme='dark'] .sectionHeader p,
+[data-theme='dark'] .featureCard p,
+[data-theme='dark'] .workflowCard p,
+[data-theme='dark'] .noteCard p,
+[data-theme='dark'] .docCard p {
+  color: #d4ccbf;
+}
+
+[data-theme='dark'] .primaryButton {
+  background: #d6a063;
+  border-color: #d6a063;
+  color: #171913;
+  box-shadow: 0 18px 32px rgba(214, 160, 99, 0.12);
+}
+
+[data-theme='dark'] .primaryButton:hover {
+  background: #e2b37f;
+  border-color: #e2b37f;
+  color: #11130f;
+}
+
+[data-theme='dark'] .secondaryButton {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(242, 234, 220, 0.12);
+  color: #f2eadc;
+}
+
+[data-theme='dark'] .secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(242, 234, 220, 0.18);
+  color: #fff8ee;
+}
+
+[data-theme='dark'] .installLabel,
+[data-theme='dark'] .miniLabel,
+[data-theme='dark'] .signalLabel,
+[data-theme='dark'] .featureEyebrow,
+[data-theme='dark'] .workflowLabel,
+[data-theme='dark'] .metricSummaryLabel,
+[data-theme='dark'] .metricLabel {
+  color: #d6a063;
+}
+
+[data-theme='dark'] .miniCard,
+[data-theme='dark'] .signalCard,
+[data-theme='dark'] .featureCard,
+[data-theme='dark'] .workflowCard,
+[data-theme='dark'] .metricCard,
+[data-theme='dark'] .noteCard,
+[data-theme='dark'] .docCard {
+  border-color: rgba(242, 234, 220, 0.08);
+  background: rgba(24, 27, 21, 0.78);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+[data-theme='dark'] .specCard {
+  border-color: rgba(242, 234, 220, 0.08);
+  background:
+    radial-gradient(circle at top right, rgba(214, 160, 99, 0.12), transparent 12rem),
+    linear-gradient(180deg, rgba(24, 27, 21, 0.96) 0%, rgba(19, 21, 17, 0.98) 100%);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.24);
+}
+
+[data-theme='dark'] .specEyebrow {
+  background: rgba(255, 255, 255, 0.06);
+  color: #d6a063;
+}
+
+[data-theme='dark'] .specSubtitle,
+[data-theme='dark'] .specMeta {
+  color: #d4ccbf;
+}
+
+[data-theme='dark'] .specBlock {
+  border-color: rgba(242, 234, 220, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme='dark'] .specLabel {
+  color: #d6a063;
+}
+
+[data-theme='dark'] .specValue,
+[data-theme='dark'] .specList {
+  color: #fff4e2;
+}
+
+[data-theme='dark'] .metricSummary {
+  border-bottom-color: rgba(242, 234, 220, 0.08);
+}
+
+[data-theme='dark'] .metricSummaryValue,
+[data-theme='dark'] .metricValue {
+  color: #fff4e2;
+}
+
+[data-theme='dark'] .metricSummaryDelta {
+  background: rgba(214, 160, 99, 0.14);
+  color: #f4d2ab;
+}
+
+[data-theme='dark'] .metricRow {
+  border-color: rgba(242, 234, 220, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme='dark'] .metricImpact {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f2eadc;
+}
+
+[data-theme='dark'] .metricValueCard {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+[data-theme='dark'] .metricImpactBody {
+  color: #d4ccbf;
+}
+
+[data-theme='dark'] .signalValue {
+  color: #fff4e2;
+}
+
+[data-theme='dark'] .inlineLink {
+  color: #e7c4a8;
+}
+
+[data-theme='dark'] .inlineLink:hover {
+  color: #fff4e2;
+}
+
+[data-theme='dark'] .workflowLabel {
+  background: rgba(214, 160, 99, 0.14);
 }
 
 @media (max-width: 996px) {
@@ -406,6 +716,10 @@
   .heroTitle {
     max-width: none;
     font-size: clamp(2.6rem, 10vw, 4rem);
+  }
+
+  .metricCompare {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -431,9 +745,9 @@
     justify-content: center;
   }
 
-  .metricTable th,
-  .metricTable td {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+  .metricSummary,
+  .metricRowTop {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
